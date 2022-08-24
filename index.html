@@ -1,0 +1,1510 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>JavaSE</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", sans-serif; color: rgb(0, 64, 80); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+@media only screen and (min-width: 1400px) {
+  #write { max-width: 1024px; }
+}
+@media only screen and (min-width: 1800px) {
+  #write { max-width: 1200px; }
+}
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 5px solid rgb(66, 185, 131); padding: 8px 15px; color: rgb(33, 93, 66); background-color: rgb(243, 245, 247); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; margin: 0px; padding: 6px 13px; }
+table td { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 6px 13px; }
+table th:first-child, table td:first-child { margin-top: 0px; }
+table th:last-child, table td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 2px; color: rgb(209, 37, 115); }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); opacity: 0.4; }
+.ty-preferences .window-content { background-color: rgb(250, 250, 250); }
+.ty-preferences .nav-group-item.active { color: white; background: rgb(153, 153, 153); }
+.menu-item-container a.menu-style-btn { background-color: rgb(245, 248, 250); background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); }
+#write mark { background: transparent; color: rgb(216, 105, 105); font-weight: bold; }
+p .md-image:only-child { width: auto; text-align: left; }
+
+
+.cm-s-inner { background-color: rgb(38, 50, 56); color: rgb(233, 237, 237); }
+.cm-s-inner .CodeMirror-gutters { background: rgb(38, 50, 56); color: rgb(83, 127, 126); border: none; }
+.cm-s-inner .CodeMirror-guttermarker, .cm-s-inner .CodeMirror-guttermarker-subtle, .cm-s-inner .CodeMirror-linenumber { color: rgb(83, 127, 126); }
+.cm-s-inner .CodeMirror-cursor { border-left: 1px solid rgb(248, 248, 240); }
+.cm-s-inner div.CodeMirror-selected { background: rgba(255, 255, 255, 0.15); }
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected { background: rgba(255, 255, 255, 0.1); }
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line > span::selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.1); }
+.cm-s-inner .CodeMirror-activeline-background { background: rgba(0, 0, 0, 0); }
+.cm-s-inner .cm-keyword { color: rgb(199, 146, 234); }
+.cm-s-inner .cm-operator { color: rgb(233, 237, 237); }
+.cm-s-inner .cm-variable-2 { color: rgb(128, 203, 196); }
+.cm-s-inner .cm-variable-3 { color: rgb(158, 255, 255); }
+.cm-s-inner .cm-builtin { color: rgb(222, 203, 107); }
+.cm-s-inner .cm-atom { color: rgb(247, 118, 105); }
+.cm-s-inner .cm-number { color: rgb(247, 118, 105); }
+.cm-s-inner .cm-def { color: rgb(233, 237, 237); }
+.cm-s-inner .cm-string { color: rgb(195, 232, 141); }
+.cm-s-inner .cm-string-2 { color: rgb(128, 203, 196); }
+.cm-s-inner .cm-comment { color: rgb(84, 110, 122); }
+.cm-s-inner .cm-variable { color: rgb(158, 255, 255); }
+.cm-s-inner .cm-tag { color: rgb(128, 203, 196); }
+.cm-s-inner .cm-meta { color: rgb(128, 203, 196); }
+.cm-s-inner .cm-attribute { color: rgb(255, 203, 107); }
+.cm-s-inner .cm-property { color: rgb(128, 203, 174); }
+.cm-s-inner .cm-qualifier { color: rgb(222, 203, 107); }
+.cm-s-inner .cm-variable-3 { color: rgb(222, 203, 107); }
+.cm-s-inner .cm-tag { color: rgb(255, 83, 112); }
+.cm-s-inner .cm-error { color: rgb(255, 255, 255); background-color: rgb(236, 95, 103); }
+.cm-s-inner .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+.md-fences { background-color: rgb(38, 50, 56); color: rgb(233, 237, 237); border: none; }
+.md-fences .code-tooltip { background-color: rgb(38, 50, 56); }
+
+
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node first-line-indent'><blockquote><p>Author：Zhry</p><p>Version：1.0.01</p></blockquote><h1><a name='header-n4' class='md-header-anchor '></a>JAVASE</h1><blockquote><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#header-n4">JAVASE</a></span><span class="md-toc-item md-toc-h1" data-ref="n7"><a class="md-toc-inner" href="#header-n7">一、对象与类相关概念</a></span><span class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#header-n8">1. java中类与对象的关系与区别</a></span><span class="md-toc-item md-toc-h3" data-ref="n9"><a class="md-toc-inner" href="#header-n9">1.1 什么是类？</a></span><span class="md-toc-item md-toc-h3" data-ref="n12"><a class="md-toc-inner" href="#header-n12">1.2 什么是对象？</a></span><span class="md-toc-item md-toc-h3" data-ref="n15"><a class="md-toc-inner" href="#header-n15">1.3 类是对象的一个集合，对象是类的实例。</a></span><span class="md-toc-item md-toc-h2" data-ref="n16"><a class="md-toc-inner" href="#header-n16">2. 面向对象(OO)的含义与优点</a></span><span class="md-toc-item md-toc-h3" data-ref="n17"><a class="md-toc-inner" href="#header-n17">2.1 面向对象(OO)的优点</a></span><span class="md-toc-item md-toc-h3" data-ref="n34"><a class="md-toc-inner" href="#header-n34">2.2 OO的分类与含义</a></span><span class="md-toc-item md-toc-h2" data-ref="n43"><a class="md-toc-inner" href="#header-n43">3. 成员变量与局部变量</a></span><span class="md-toc-item md-toc-h3" data-ref="n44"><a class="md-toc-inner" href="#header-n44">3.1 变量优先级判断</a></span><span class="md-toc-item md-toc-h3" data-ref="n48"><a class="md-toc-inner" href="#header-n48">3.2 成员变量与局部变量的区别</a></span><span class="md-toc-item md-toc-h4" data-ref="n49"><a class="md-toc-inner" href="#header-n49">3.2.1 作用域不同</a></span><span class="md-toc-item md-toc-h4" data-ref="n53"><a class="md-toc-inner" href="#header-n53">3.2.2 初始值不同</a></span><span class="md-toc-item md-toc-h4" data-ref="n57"><a class="md-toc-inner" href="#header-n57">3.2.3 在同一个方法中,不允许有同名局部变量;在不同方法中可以有同名方法</a></span><span class="md-toc-item md-toc-h4" data-ref="n58"><a class="md-toc-inner" href="#header-n58">3.2.4 两类变量同名时,局部变量具有更高优先级</a></span><span class="md-toc-item md-toc-h2" data-ref="n59"><a class="md-toc-inner" href="#header-n59">4. JavaDoc注释(生成注释文档)</a></span><span class="md-toc-item md-toc-h2" data-ref="n73"><a class="md-toc-inner" href="#header-n73">5. 本章总结</a></span><span class="md-toc-item md-toc-h3" data-ref="n74"><a class="md-toc-inner" href="#header-n74">5.1 对象与类总结</a></span><span class="md-toc-item md-toc-h3" data-ref="n92"><a class="md-toc-inner" href="#header-n92">5.2 类的无参方法</a></span><span class="md-toc-item md-toc-h4" data-ref="n93"><a class="md-toc-inner" href="#header-n93">5.2.1 定义类的方法必须包括</a></span><span class="md-toc-item md-toc-h4" data-ref="n95"><a class="md-toc-inner" href="#header-n95">5.2.2 调用类方法的两种形式</a></span><span class="md-toc-item md-toc-h4" data-ref="n97"><a class="md-toc-inner" href="#header-n97">5.2.3 成员变量和局部变量的不同点</a></span><span class="md-toc-item md-toc-h4" data-ref="n111"><a class="md-toc-inner" href="#header-n111">5.2.4 注释符</a></span><span class="md-toc-item md-toc-h5" data-ref="n120"><a class="md-toc-inner" href="#header-n120">(3).类的带参方法:</a></span><span class="md-toc-item md-toc-h2" data-ref="n136"><a class="md-toc-inner" href="#header-n136">7. 字符串(String)类</a></span><span class="md-toc-item md-toc-h3" data-ref="n137"><a class="md-toc-inner" href="#header-n137">7.1 字符串用途</a></span><span class="md-toc-item md-toc-h3" data-ref="n140"><a class="md-toc-inner" href="#header-n140">7.2 String代码解释</a></span><span class="md-toc-item md-toc-h3" data-ref="n142"><a class="md-toc-inner" href="#header-n142">7.3 字符串主要构造函数方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n165"><a class="md-toc-inner" href="#header-n165">7.4 字符串比较方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n180"><a class="md-toc-inner" href="#header-n180">7.5 字符串连接方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n187"><a class="md-toc-inner" href="#header-n187">7.6 字符串常用提取方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n219"><a class="md-toc-inner" href="#header-n219">8. StringBuffer类(String增强版)</a></span><span class="md-toc-item md-toc-h3" data-ref="n220"><a class="md-toc-inner" href="#header-n220">8.1 StringBuffer用途</a></span><span class="md-toc-item md-toc-h3" data-ref="n223"><a class="md-toc-inner" href="#header-n223">8.2 StringBuffer的代码声明与使用</a></span><span class="md-toc-item md-toc-h3" data-ref="n225"><a class="md-toc-inner" href="#header-n225">8.3 StringBuffer类的常用方法</a></span><span class="md-toc-item md-toc-h1" data-ref="n257"><a class="md-toc-inner" href="#header-n257">二、对象和封装</a></span><span class="md-toc-item md-toc-h2" data-ref="n258"><a class="md-toc-inner" href="#header-n258">9. 封装</a></span><span class="md-toc-item md-toc-h3" data-ref="n259"><a class="md-toc-inner" href="#header-n259">9.1 封装的概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n266"><a class="md-toc-inner" href="#header-n266">9.2 封装的优点</a></span><span class="md-toc-item md-toc-h2" data-ref="n268"><a class="md-toc-inner" href="#header-n268">10. final的使用</a></span><span class="md-toc-item md-toc-h3" data-ref="n269"><a class="md-toc-inner" href="#header-n269">10.1 修饰类</a></span><span class="md-toc-item md-toc-h3" data-ref="n275"><a class="md-toc-inner" href="#header-n275">10.2 修饰方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n282"><a class="md-toc-inner" href="#header-n282">10.3 修饰成员变量</a></span><span class="md-toc-item md-toc-h3" data-ref="n287"><a class="md-toc-inner" href="#header-n287">10.4 修饰成员变量</a></span><span class="md-toc-item md-toc-h2" data-ref="n296"><a class="md-toc-inner" href="#header-n296">11. Static(静态关键字)的使用</a></span><span class="md-toc-item md-toc-h3" data-ref="n297"><a class="md-toc-inner" href="#header-n297">11.1 static的作用</a></span><span class="md-toc-item md-toc-h3" data-ref="n300"><a class="md-toc-inner" href="#header-n300">11.2 static要解决什么问题？</a></span><span class="md-toc-item md-toc-h3" data-ref="n308"><a class="md-toc-inner" href="#header-n308">11.3 static特点</a></span><span class="md-toc-item md-toc-h3" data-ref="n319"><a class="md-toc-inner" href="#header-n319">11.4 static静态变量</a></span><span class="md-toc-item md-toc-h3" data-ref="n322"><a class="md-toc-inner" href="#header-n322">11.5 静态变量和实例变量的区别</a></span><span class="md-toc-item md-toc-h3" data-ref="n326"><a class="md-toc-inner" href="#header-n326">11.6 static静态方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n329"><a class="md-toc-inner" href="#header-n329">11.7 static使用注意事项</a></span><span class="md-toc-item md-toc-h3" data-ref="n338"><a class="md-toc-inner" href="#header-n338">11.8 总结</a></span><span class="md-toc-item md-toc-h2" data-ref="n345"><a class="md-toc-inner" href="#header-n345">12. 构造函数单例模式(提升知识点)</a></span><span class="md-toc-item md-toc-h3" data-ref="n346"><a class="md-toc-inner" href="#header-n346">12.1 概述</a></span><span class="md-toc-item md-toc-h3" data-ref="n359"><a class="md-toc-inner" href="#header-n359">12.2 优缺点</a></span><span class="md-toc-item md-toc-h3" data-ref="n365"><a class="md-toc-inner" href="#header-n365">12.3 常见实现方式</a></span><span class="md-toc-item md-toc-h3" data-ref="n384"><a class="md-toc-inner" href="#header-n384">12.4 常见应用场景</a></span><span class="md-toc-item md-toc-h1" data-ref="n399"><a class="md-toc-inner" href="#header-n399">三、继承与重写</a></span><span class="md-toc-item md-toc-h2" data-ref="n400"><a class="md-toc-inner" href="#header-n400">13. 访问修饰符</a></span><span class="md-toc-item md-toc-h2" data-ref="n437"><a class="md-toc-inner" href="#header-n437">14. 重写</a></span><span class="md-toc-item md-toc-h3" data-ref="n438"><a class="md-toc-inner" href="#header-n438">14.1 方法的重载</a></span><span class="md-toc-item md-toc-h3" data-ref="n450"><a class="md-toc-inner" href="#header-n450">14.2 方法的重写</a></span><span class="md-toc-item md-toc-h3" data-ref="n453"><a class="md-toc-inner" href="#header-n453">14.3 方法重写的注意事项</a></span><span class="md-toc-item md-toc-h3" data-ref="n459"><a class="md-toc-inner" href="#header-n459">14.4 为什么要重写方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n463"><a class="md-toc-inner" href="#header-n463">14.5 重写的应用</a></span><span class="md-toc-item md-toc-h2" data-ref="n466"><a class="md-toc-inner" href="#header-n466">15. 抽象类</a></span><span class="md-toc-item md-toc-h3" data-ref="n467"><a class="md-toc-inner" href="#header-n467">15.1 概述</a></span><span class="md-toc-item md-toc-h4" data-ref="n470"><a class="md-toc-inner" href="#header-n470">15.1.1 抽象的定义格式</a></span><span class="md-toc-item md-toc-h4" data-ref="n477"><a class="md-toc-inner" href="#header-n477">15.1.2 抽象的特点</a></span><span class="md-toc-item md-toc-h4" data-ref="n488"><a class="md-toc-inner" href="#header-n488">15.1.3 抽象类的注意事项</a></span><span class="md-toc-item md-toc-h3" data-ref="n497"><a class="md-toc-inner" href="#header-n497">15.2 代码实例</a></span><span class="md-toc-item md-toc-h2" data-ref="n515"><a class="md-toc-inner" href="#header-n515">16. final修饰符</a></span><span class="md-toc-item md-toc-h1" data-ref="n520"><a class="md-toc-inner" href="#header-n520">四、系统常用类</a></span><span class="md-toc-item md-toc-h2" data-ref="n521"><a class="md-toc-inner" href="#header-n521">17. Object类</a></span><span class="md-toc-item md-toc-h3" data-ref="n522"><a class="md-toc-inner" href="#header-n522">17.1 Object类的作用</a></span><span class="md-toc-item md-toc-h3" data-ref="n527"><a class="md-toc-inner" href="#header-n527">17.2 常见的需要改写的方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n533"><a class="md-toc-inner" href="#header-n533">18 System类</a></span><span class="md-toc-item md-toc-h3" data-ref="n534"><a class="md-toc-inner" href="#header-n534">18.1 System类的概述</a></span><span class="md-toc-item md-toc-h3" data-ref="n543"><a class="md-toc-inner" href="#header-n543">18.2 常用的System方法</a></span><span class="md-toc-item md-toc-h4" data-ref="n544"><a class="md-toc-inner" href="#header-n544">18.2.1 system例举</a></span><span class="md-toc-item md-toc-h4" data-ref="n559"><a class="md-toc-inner" href="#header-n559">18.2.2 system方法使用方式与功能</a></span><span class="md-toc-item md-toc-h5" data-ref="n561"><a class="md-toc-inner" href="#header-n561">18.2.2.1 数组拷贝</a></span><span class="md-toc-item md-toc-h5" data-ref="n565"><a class="md-toc-inner" href="#header-n565">18.2.2.2 获取当前计算机时间</a></span><span class="md-toc-item md-toc-h5" data-ref="n569"><a class="md-toc-inner" href="#header-n569">18.2.2.3 退出程序</a></span><span class="md-toc-item md-toc-h5" data-ref="n573"><a class="md-toc-inner" href="#header-n573">18.2.2.4 请求系统垃圾回收</a></span><span class="md-toc-item md-toc-h3" data-ref="n577"><a class="md-toc-inner" href="#header-n577">18.3 System功能方法</a></span><span class="md-toc-item md-toc-h4" data-ref="n578"><a class="md-toc-inner" href="#header-n578">18.3.1 对照表</a></span><span class="md-toc-item md-toc-h4" data-ref="n667"><a class="md-toc-inner" href="#header-n667">18.3.2 测试使用</a></span><span class="md-toc-item md-toc-h2" data-ref="n669"><a class="md-toc-inner" href="#header-n669">19. 数据类型类</a></span><span class="md-toc-item md-toc-h3" data-ref="n670"><a class="md-toc-inner" href="#header-n670">19.1 数值类</a></span><span class="md-toc-item md-toc-h4" data-ref="n671"><a class="md-toc-inner" href="#header-n671">19.1.1 数值类的定义与功能</a></span><span class="md-toc-item md-toc-h4" data-ref="n678"><a class="md-toc-inner" href="#header-n678">19.1.2 数值类转换</a></span><span class="md-toc-item md-toc-h3" data-ref="n682"><a class="md-toc-inner" href="#header-n682">19.2 字符类</a></span><span class="md-toc-item md-toc-h3" data-ref="n683"><a class="md-toc-inner" href="#header-n683">19.3 数学类</a></span><span class="md-toc-item md-toc-h4" data-ref="n684"><a class="md-toc-inner" href="#header-n684">19.3.1 Math作用</a></span><span class="md-toc-item md-toc-h4" data-ref="n688"><a class="md-toc-inner" href="#header-n688">19.3.2 BigDecimal(任意精度整数运算)</a></span><span class="md-toc-item md-toc-h5" data-ref="n689"><a class="md-toc-inner" href="#header-n689">19.3.2.1 BigDecimal概念</a></span><span class="md-toc-item md-toc-h5" data-ref="n692"><a class="md-toc-inner" href="#header-n692">19.3.2.2 十进制字符串 转 BigDecimal</a></span><span class="md-toc-item md-toc-h5" data-ref="n694"><a class="md-toc-inner" href="#header-n694">19.3.2.3 BigInteger提供的数学计算方式</a></span><span class="md-toc-item md-toc-h5" data-ref="n696"><a class="md-toc-inner" href="#header-n696">19.3.2.4 普通计算精度丢失示例</a></span><span class="md-toc-item md-toc-h5" data-ref="n700"><a class="md-toc-inner" href="#header-n700">19.3.2.5 BigDecimal构造方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n706"><a class="md-toc-inner" href="#header-n706">19.3.2.6 BigDecimal生命是精度丢失</a></span><span class="md-toc-item md-toc-h5" data-ref="n713"><a class="md-toc-inner" href="#header-n713">19.3.2.7 除法运算divide注意点</a></span><span class="md-toc-item md-toc-h4" data-ref="n734"><a class="md-toc-inner" href="#header-n734">19.3.3 Math常用静态方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n820"><a class="md-toc-inner" href="#header-n820">19.4 时间类型Date</a></span><span class="md-toc-item md-toc-h4" data-ref="n821"><a class="md-toc-inner" href="#header-n821">19.4.1 Date类对象创建</a></span><span class="md-toc-item md-toc-h4" data-ref="n823"><a class="md-toc-inner" href="#header-n823">19.4.2 Date时间格式转换</a></span><span class="md-toc-item md-toc-h3" data-ref="n825"><a class="md-toc-inner" href="#header-n825">19.5 随机数类Random</a></span><span class="md-toc-item md-toc-h1" data-ref="n827"><a class="md-toc-inner" href="#header-n827">五、异常、log4j使用</a></span><span class="md-toc-item md-toc-h2" data-ref="n828"><a class="md-toc-inner" href="#header-n828">20. Java如何进行异常处理</a></span><span class="md-toc-item md-toc-h3" data-ref="n842"><a class="md-toc-inner" href="#header-n842">20.1 异常的使用及执行流程</a></span><span class="md-toc-item md-toc-h4" data-ref="n843"><a class="md-toc-inner" href="#header-n843">20.1.1 异常的处理方案</a></span><span class="md-toc-item md-toc-h4" data-ref="n866"><a class="md-toc-inner" href="#header-n866">20.1.2 异常的执行流程</a></span><span class="md-toc-item md-toc-h2" data-ref="n868"><a class="md-toc-inner" href="#header-n868">21. 异常方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n892"><a class="md-toc-inner" href="#header-n892">22. Java 内置异常类</a></span><span class="md-toc-item md-toc-h2" data-ref="n963"><a class="md-toc-inner" href="#header-n963">23. 异常相关问题</a></span><span class="md-toc-item md-toc-h3" data-ref="n964"><a class="md-toc-inner" href="#header-n964">23.1 Error与Exception的区别</a></span><span class="md-toc-item md-toc-h3" data-ref="n968"><a class="md-toc-inner" href="#header-n968">23.2 在catch捕获异常时，为什么不考虑使用Throwable类型，而只是使用Exception来进行接收？</a></span><span class="md-toc-item md-toc-h3" data-ref="n971"><a class="md-toc-inner" href="#header-n971">23.3 异常是一起处理好还是分开处理好？</a></span><span class="md-toc-item md-toc-h3" data-ref="n974"><a class="md-toc-inner" href="#header-n974">23.4 throw和throws的区别？</a></span><span class="md-toc-item md-toc-h3" data-ref="n982"><a class="md-toc-inner" href="#header-n982">23.5 检查型异常（Checked Exception）与非检查型异常（Unchecked Exception）区别？</a></span><span class="md-toc-item md-toc-h2" data-ref="n993"><a class="md-toc-inner" href="#header-n993">24. 自定义异常</a></span><span class="md-toc-item md-toc-h2" data-ref="n1017"><a class="md-toc-inner" href="#header-n1017">25. logger4j使用步骤</a></span><span class="md-toc-item md-toc-h1" data-ref="n1029"><a class="md-toc-inner" href="#header-n1029">六、集合框架</a></span><span class="md-toc-item md-toc-h2" data-ref="n1030"><a class="md-toc-inner" href="#header-n1030">26. Collection</a></span><span class="md-toc-item md-toc-h3" data-ref="n1031"><a class="md-toc-inner" href="#header-n1031">26.1 Collection接口的方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n1077"><a class="md-toc-inner" href="#header-n1077">26.2 Collection包含了List和Set两大分支</a></span><span class="md-toc-item md-toc-h3" data-ref="n1082"><a class="md-toc-inner" href="#header-n1082">26.3 List接口常用方法</a></span><span class="md-toc-item md-toc-h4" data-ref="n1108"><a class="md-toc-inner" href="#header-n1108">26.3.1 ArrayList</a></span><span class="md-toc-item md-toc-h5" data-ref="n1109"><a class="md-toc-inner" href="#header-n1109">26.3.1.1 什么是<strong>ArrayList</strong></a></span><span class="md-toc-item md-toc-h5" data-ref="n1114"><a class="md-toc-inner" href="#header-n1114">26.3.1.2 如何使用ArrayList</a></span><span class="md-toc-item md-toc-h4" data-ref="n1116"><a class="md-toc-inner" href="#header-n1116">26.3.2 LinkedList的特殊方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n1139"><a class="md-toc-inner" href="#header-n1139">27. Map</a></span><span class="md-toc-item md-toc-h3" data-ref="n1140"><a class="md-toc-inner" href="#header-n1140">27.1 Map概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n1145"><a class="md-toc-inner" href="#header-n1145">27.2 Map常见方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n1171"><a class="md-toc-inner" href="#header-n1171">28. Iterator 迭代器</a></span><span class="md-toc-item md-toc-h3" data-ref="n1172"><a class="md-toc-inner" href="#header-n1172">28.1 如何遍历List集合</a></span><span class="md-toc-item md-toc-h3" data-ref="n1180"><a class="md-toc-inner" href="#header-n1180">28.2 ArrayList使用迭代器</a></span><span class="md-toc-item md-toc-h4" data-ref="n1181"><a class="md-toc-inner" href="#header-n1181">28.2.1 Array使用迭代器删除l两种</a></span><span class="md-toc-item md-toc-h4" data-ref="n1186"><a class="md-toc-inner" href="#header-n1186">28.2.2 快速遍历</a></span><span class="md-toc-item md-toc-h3" data-ref="n1188"><a class="md-toc-inner" href="#header-n1188">28.3 Map遍历的两种方式</a></span><span class="md-toc-item md-toc-h4" data-ref="n1189"><a class="md-toc-inner" href="#header-n1189">28.3.1 通过键找值</a></span><span class="md-toc-item md-toc-h4" data-ref="n1191"><a class="md-toc-inner" href="#header-n1191">28.3.2 键值对形式查找</a></span><span class="md-toc-item md-toc-h2" data-ref="n1193"><a class="md-toc-inner" href="#header-n1193">29. 泛型集合</a></span><span class="md-toc-item md-toc-h3" data-ref="n1194"><a class="md-toc-inner" href="#header-n1194">29.1 泛型的集合使用示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1196"><a class="md-toc-inner" href="#header-n1196">30. Arrays方法中数组转集合</a></span><span class="md-toc-item md-toc-h3" data-ref="n1197"><a class="md-toc-inner" href="#header-n1197">30.1 代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1199"><a class="md-toc-inner" href="#header-n1199">31. ArraysList删除相关</a></span><span class="md-toc-item md-toc-h3" data-ref="n1200"><a class="md-toc-inner" href="#header-n1200">31.1 前言</a></span><span class="md-toc-item md-toc-h3" data-ref="n1202"><a class="md-toc-inner" href="#header-n1202">31.2 准备数据阶段</a></span><span class="md-toc-item md-toc-h3" data-ref="n1207"><a class="md-toc-inner" href="#header-n1207">31.3 Arrays.asList的真面目</a></span><span class="md-toc-item md-toc-h3" data-ref="n1216"><a class="md-toc-inner" href="#header-n1216">31.4 ArrayList遍历删除</a></span><span class="md-toc-item md-toc-h4" data-ref="n1217"><a class="md-toc-inner" href="#header-n1217">31.4.1 错误1</a></span><span class="md-toc-item md-toc-h4" data-ref="n1224"><a class="md-toc-inner" href="#header-n1224">31.4.2 错误2</a></span><span class="md-toc-item md-toc-h4" data-ref="n1228"><a class="md-toc-inner" href="#header-n1228">31.4.3 错误3</a></span><span class="md-toc-item md-toc-h3" data-ref="n1232"><a class="md-toc-inner" href="#header-n1232">31.5 总结</a></span><span class="md-toc-item md-toc-h1" data-ref="n1237"><a class="md-toc-inner" href="#header-n1237">七、多线程</a></span><span class="md-toc-item md-toc-h2" data-ref="n1238"><a class="md-toc-inner" href="#header-n1238">32. 什么是进程和线程?</a></span><span class="md-toc-item md-toc-h2" data-ref="n1248"><a class="md-toc-inner" href="#header-n1248">33. 两种实现多线程方式</a></span><span class="md-toc-item md-toc-h3" data-ref="n1249"><a class="md-toc-inner" href="#header-n1249">33.1 方式一：实现Runnable接口,实现run方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n1251"><a class="md-toc-inner" href="#header-n1251">33.2 方式二: 继承Thread类并重写run方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n1253"><a class="md-toc-inner" href="#header-n1253">33.3 两种创建线程的方式有什么区别？</a></span><span class="md-toc-item md-toc-h2" data-ref="n1256"><a class="md-toc-inner" href="#header-n1256">34. 常见的Thread方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n1276"><a class="md-toc-inner" href="#header-n1276">35. 线程调度方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n1302"><a class="md-toc-inner" href="#header-n1302">36. 线程的状态</a></span><span class="md-toc-item md-toc-h2" data-ref="n1305"><a class="md-toc-inner" href="#header-n1305">37. join()代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1307"><a class="md-toc-inner" href="#header-n1307">38. sleep()方法和yield()方法区别</a></span><span class="md-toc-item md-toc-h2" data-ref="n1316"><a class="md-toc-inner" href="#header-n1316">39. 线程同步</a></span><span class="md-toc-item md-toc-h3" data-ref="n1317"><a class="md-toc-inner" href="#header-n1317">39.1 线程同步概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n1321"><a class="md-toc-inner" href="#header-n1321">39.2 同步代码块与同步方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n1323"><a class="md-toc-inner" href="#header-n1323">39.3 使用同步方法代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1325"><a class="md-toc-inner" href="#header-n1325">40. 线程通信</a></span><span class="md-toc-item md-toc-h3" data-ref="n1326"><a class="md-toc-inner" href="#header-n1326">40.1 三个方法解决线程之间通信问题</a></span><span class="md-toc-item md-toc-h3" data-ref="n1346"><a class="md-toc-inner" href="#header-n1346">40.2 简单代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1350"><a class="md-toc-inner" href="#header-n1350">41. Timer定时器</a></span><span class="md-toc-item md-toc-h3" data-ref="n1351"><a class="md-toc-inner" href="#header-n1351">41.1 只执行一次代码示例</a></span><span class="md-toc-item md-toc-h3" data-ref="n1353"><a class="md-toc-inner" href="#header-n1353">41.2 循环执行代码示例</a></span><span class="md-toc-item md-toc-h1" data-ref="n1355"><a class="md-toc-inner" href="#header-n1355">八、IO流</a></span><span class="md-toc-item md-toc-h2" data-ref="n1356"><a class="md-toc-inner" href="#header-n1356">42. IO流的分类与概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n1357"><a class="md-toc-inner" href="#header-n1357">42.1 io流概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n1362"><a class="md-toc-inner" href="#header-n1362">42.2 分类依据</a></span><span class="md-toc-item md-toc-h3" data-ref="n1368"><a class="md-toc-inner" href="#header-n1368">42.3 分类示例图</a></span><span class="md-toc-item md-toc-h2" data-ref="n1370"><a class="md-toc-inner" href="#header-n1370">43. 文件类方法总结</a></span><span class="md-toc-item md-toc-h3" data-ref="n1371"><a class="md-toc-inner" href="#header-n1371">43.1 文件类概念</a></span><span class="md-toc-item md-toc-h3" data-ref="n1376"><a class="md-toc-inner" href="#header-n1376">43.2 创建File类对象的构造方法</a></span><span class="md-toc-item md-toc-h3" data-ref="n1390"><a class="md-toc-inner" href="#header-n1390">43.3 File类的常见方法</a></span><span class="md-toc-item md-toc-h2" data-ref="n1444"><a class="md-toc-inner" href="#header-n1444">44. 字节流</a></span><span class="md-toc-item md-toc-h3" data-ref="n1445"><a class="md-toc-inner" href="#header-n1445">44.1 字节流基流</a></span><span class="md-toc-item md-toc-h4" data-ref="n1446"><a class="md-toc-inner" href="#header-n1446">44.1.1 InputStream</a></span><span class="md-toc-item md-toc-h4" data-ref="n1468"><a class="md-toc-inner" href="#header-n1468">44.1.2 OutputStream</a></span><span class="md-toc-item md-toc-h3" data-ref="n1490"><a class="md-toc-inner" href="#header-n1490">44.2 字节流文件操作流</a></span><span class="md-toc-item md-toc-h4" data-ref="n1491"><a class="md-toc-inner" href="#header-n1491">44.2.1 字节文件输入流 (FileInputStream)</a></span><span class="md-toc-item md-toc-h5" data-ref="n1494"><a class="md-toc-inner" href="#header-n1494">44.2.1.1 构造函数</a></span><span class="md-toc-item md-toc-h5" data-ref="n1505"><a class="md-toc-inner" href="#header-n1505">44.2.1.2 代码示例</a></span><span class="md-toc-item md-toc-h4" data-ref="n1507"><a class="md-toc-inner" href="#header-n1507">44.2.2 字节文件输出流  (FileOutputStream)</a></span><span class="md-toc-item md-toc-h5" data-ref="n1510"><a class="md-toc-inner" href="#header-n1510">44.2.2.1 构造函数</a></span><span class="md-toc-item md-toc-h5" data-ref="n1527"><a class="md-toc-inner" href="#header-n1527">442.2.2. 代码示例</a></span><span class="md-toc-item md-toc-h3" data-ref="n1531"><a class="md-toc-inner" href="#header-n1531">44.3 字节缓冲流（高效流）</a></span><span class="md-toc-item md-toc-h4" data-ref="n1532"><a class="md-toc-inner" href="#header-n1532">44.3.1 字节缓冲输入流（BufferedInputStream）</a></span><span class="md-toc-item md-toc-h5" data-ref="n1535"><a class="md-toc-inner" href="#header-n1535">44.3.1.1 构造方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1546"><a class="md-toc-inner" href="#header-n1546">44.3.1.2 代码示例</a></span><span class="md-toc-item md-toc-h4" data-ref="n1548"><a class="md-toc-inner" href="#header-n1548">44.3.2 字节缓冲输出流(BufferedOutputStream)</a></span><span class="md-toc-item md-toc-h5" data-ref="n1551"><a class="md-toc-inner" href="#header-n1551">44.3.2.1 构造方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1562"><a class="md-toc-inner" href="#header-n1562">44.3.2.2 常用方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1576"><a class="md-toc-inner" href="#header-n1576">44.3.2.3 代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1580"><a class="md-toc-inner" href="#header-n1580">45. 字符流</a></span><span class="md-toc-item md-toc-h3" data-ref="n1581"><a class="md-toc-inner" href="#header-n1581">45.1 字符流基类</a></span><span class="md-toc-item md-toc-h4" data-ref="n1582"><a class="md-toc-inner" href="#header-n1582">45.1.1 读取字符流(Reader)</a></span><span class="md-toc-item md-toc-h5" data-ref="n1585"><a class="md-toc-inner" href="#header-n1585">45.1.1.1 常用方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1605"><a class="md-toc-inner" href="#header-n1605">45.1.1.2 代码示例</a></span><span class="md-toc-item md-toc-h4" data-ref="n1607"><a class="md-toc-inner" href="#header-n1607">45.1.2 写入字符流（Writer）</a></span><span class="md-toc-item md-toc-h5" data-ref="n1610"><a class="md-toc-inner" href="#header-n1610">45.1.2.1 常用方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1633"><a class="md-toc-inner" href="#header-n1633">45.1.2.2 代码示例</a></span><span class="md-toc-item md-toc-h3" data-ref="n1635"><a class="md-toc-inner" href="#header-n1635">45.2 字符转换流</a></span><span class="md-toc-item md-toc-h4" data-ref="n1636"><a class="md-toc-inner" href="#header-n1636">45.2.1 字节流转字符流</a></span><span class="md-toc-item md-toc-h5" data-ref="n1640"><a class="md-toc-inner" href="#header-n1640">45.2.1.1 InputStreamReader构造函数</a></span><span class="md-toc-item md-toc-h5" data-ref="n1657"><a class="md-toc-inner" href="#header-n1657">45.2.1.2 OutputStreamWriter构造函数</a></span><span class="md-toc-item md-toc-h5" data-ref="n1674"><a class="md-toc-inner" href="#header-n1674">45.2.1.3 代码示例</a></span><span class="md-toc-item md-toc-h3" data-ref="n1676"><a class="md-toc-inner" href="#header-n1676">45.3 字符缓冲流（高效流）</a></span><span class="md-toc-item md-toc-h4" data-ref="n1677"><a class="md-toc-inner" href="#header-n1677">45.3.1 字符缓冲流</a></span><span class="md-toc-item md-toc-h5" data-ref="n1681"><a class="md-toc-inner" href="#header-n1681">45.3.1.1 构造方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1698"><a class="md-toc-inner" href="#header-n1698">45.3.1.2 特有方法</a></span><span class="md-toc-item md-toc-h5" data-ref="n1709"><a class="md-toc-inner" href="#header-n1709">45.3.1.3 代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1711"><a class="md-toc-inner" href="#header-n1711">46. 对象流</a></span><span class="md-toc-item md-toc-h3" data-ref="n1712"><a class="md-toc-inner" href="#header-n1712">46.1 什么是对象流？</a></span><span class="md-toc-item md-toc-h3" data-ref="n1716"><a class="md-toc-inner" href="#header-n1716">46.2 代码示例</a></span><span class="md-toc-item md-toc-h2" data-ref="n1719"><a class="md-toc-inner" href="#header-n1719">47. 后会有期</a></span></p></div></blockquote><h1><a name='header-n7' class='md-header-anchor '></a>一、对象与类相关概念</h1><h2><a name='header-n8' class='md-header-anchor '></a>1. java中类与对象的关系与区别</h2><h3><a name='header-n9' class='md-header-anchor '></a>1.1 什么是类？</h3><blockquote><p>类就是具备某些共同特征的实体的集合，它是一种抽象的数据类型，它是对所具有相同特征实体的抽象。在面向对象的程序设计语言中，类是对一类“事物”的属性与行为的抽象。</p></blockquote><h3><a name='header-n12' class='md-header-anchor '></a>1.2 什么是对象？</h3><blockquote><p>对象就是一个真实世界中的实体，对象与实体是一一对应关系的，意思就是现实世界的每一个实体都是一个对象，所以对象是一个具体的概念。</p></blockquote><h3><a name='header-n15' class='md-header-anchor '></a>1.3 类是对象的一个集合，对象是类的实例。</h3><h2><a name='header-n16' class='md-header-anchor '></a>2. 面向对象(OO)的含义与优点</h2><h3><a name='header-n17' class='md-header-anchor '></a>2.1 面向对象(OO)的优点</h3><blockquote><ol start='' ><li><p>与人类的思维习惯一致:把人类解决问题的思维过程转变为程序能够理解的过程</p></li><li><p>信息隐藏,提高了程序的可维护性和安全性:</p><ol start='' ><li>封装实现了模块化和信息隐藏</li><li>封装使得在对象外部不能随意访问对象的属性和方法</li></ol></li><li><p>提高了程序的可重用性</p><ol start='' ><li>一个类乐意创建多个对象实例,增加了重用性</li></ol></li></ol></blockquote><h3><a name='header-n34' class='md-header-anchor '></a>2.2 OO的分类与含义</h3><blockquote><ul><li>OOP:面向对象的变成</li><li>OOA:面向对象的分析</li><li>OOD:面向对象的设计</li></ul></blockquote><h2><a name='header-n43' class='md-header-anchor '></a>3. 成员变量与局部变量</h2><h3><a name='header-n44' class='md-header-anchor '></a>3.1 变量优先级判断</h3><blockquote><p>a. 范围越小,优先级越高</p><p>b. 越晚出现,优先级越高</p></blockquote><h3><a name='header-n48' class='md-header-anchor '></a>3.2 成员变量与局部变量的区别</h3><h4><a name='header-n49' class='md-header-anchor '></a>3.2.1 作用域不同</h4><blockquote><p>局部变量的作用域仅限与定义它的方法</p><p>成员变量的作用域在整个类内部都是可见的</p></blockquote><h4><a name='header-n53' class='md-header-anchor '></a>3.2.2 初始值不同</h4><blockquote><p>java会给成员变量一个初始值</p><p>java不会给局部变量赋予初始值</p></blockquote><h4><a name='header-n57' class='md-header-anchor '></a>3.2.3 在同一个方法中,不允许有同名局部变量;在不同方法中可以有同名方法</h4><h4><a name='header-n58' class='md-header-anchor '></a>3.2.4 两类变量同名时,局部变量具有更高优先级</h4><h2><a name='header-n59' class='md-header-anchor '></a>4. JavaDoc注释(生成注释文档)</h2><blockquote><p>生成注释(两个**号是JavaDoc,一个*号是多行注释)</p></blockquote><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">/**+回车</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/**</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @author 洪</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @version 1.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre><blockquote><ol start='2' ><li><h6><a name='header-n67' class='md-header-anchor '></a>导出以及查看文档</h6></li><li><p>右键项目导出(Export)=&gt;java=&gt;javadoc=&gt;选择导出位置</p><ol start='2' ><li>在生成文件中查看index.html<span>	</span></li></ol></li></ol></blockquote><h2><a name='header-n73' class='md-header-anchor '></a>5. 本章总结</h2><h3><a name='header-n74' class='md-header-anchor '></a>5.1 对象与类总结</h3><blockquote><ol start='' ><li><p>对象是用来描述客观事物的一个实体</p></li><li><p>类定义了对象将会拥有的特征(属性)和行为(方法)</p></li><li><p>类是对象的类型,对象是类的实例</p></li><li><p>使用类的步骤</p></li><li><p>定义类:使用关键字class</p><ol start='2' ><li>创建类的对象:使用关键字new</li><li>使用类的属性与方法:使用&quot;.&quot;等操作符</li></ol></li></ol></blockquote><h3><a name='header-n92' class='md-header-anchor '></a>5.2 类的无参方法</h3><h4><a name='header-n93' class='md-header-anchor '></a>5.2.1 定义类的方法必须包括</h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  1. 方法的名称</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  2. 方法返回值的类型</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  3. 方法的主体</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 68px;"></div><div class="CodeMirror-gutters" style="display: none; height: 68px;"></div></div></div></pre><h4><a name='header-n95' class='md-header-anchor '></a>5.2.2 调用类方法的两种形式</h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  1. 同一个类中的方法,直接使用"==方法名()=="调用</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  2. 不同类的方法,先==创建对象==,在使用=="对象名.方法名()"==调用</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre><h4><a name='header-n97' class='md-header-anchor '></a>5.2.3 成员变量和局部变量的不同点</h4><ol start='' ><li><p><strong>作用域不同:</strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  1. &nbsp;  成员变量在整个类都是可见的</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  2. &nbsp;  局部变量仅限于定义它的方法内</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 68px;"></div><div class="CodeMirror-gutters" style="display: none; height: 68px;"></div></div></div></pre></li><li><p><strong>初始值不同:</strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; 1. &nbsp;  java会为成员变量赋予初值</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; 2. &nbsp;  java不会为局部变量赋予初值</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 68px;"></div><div class="CodeMirror-gutters" style="display: none; height: 68px;"></div></div></div></pre></li><li><blockquote><p>在同一个方法中,不允许有同名局部变量;在不同方法中可以有同名方法</p></blockquote></li></ol><blockquote><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  &gt; &nbsp;  两类变量同名时,局部变量具有更高优先级</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 45px;"></div><div class="CodeMirror-gutters" style="display: none; height: 45px;"></div></div></div></pre></blockquote><h4><a name='header-n111' class='md-header-anchor '></a>5.2.4 注释符</h4><blockquote><ol start='' ><li>单行注释://</li><li>多行注释/* */</li><li>JavaDoc注释/** */</li></ol></blockquote><h5><a name='header-n120' class='md-header-anchor '></a>(3).类的带参方法:</h5><blockquote><ol start='' ><li><p>带参方法定义的一般形式:</p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8.16406px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;访问修饰符&gt; 返回类型 &lt;方法名&gt; (&lt;形式参数&gt;){</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>//方法的主体</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre></li><li><p>参数的概念:</p></li><li><p>形参是在定义方法时对参数的称呼</p><ol start='2' ><li>实参是在调用时传递给方法的实际的值</li></ol></li><li><p>调用带参方法时要求实参与形参要匹配</p></li></ol></blockquote><p>## </p><h2><a name='header-n136' class='md-header-anchor '></a>7. 字符串(String)类</h2><h3><a name='header-n137' class='md-header-anchor '></a>7.1 字符串用途</h3><blockquote><p>用于字符串常量,也就是说字符串的值不会改变</p></blockquote><h3><a name='header-n140' class='md-header-anchor '></a>7.2 String代码解释</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n141" mdtype="fences" style="break-inside: unset;">/*1.赋值时相当于执行一次new操作*/
+String name=new  String()
+name="hong"  
+=&gt;name=new String("hong")
+
+/*2.当赋值为""时,有创建空间,只是里面没有值*/
+String name="";
+=&gt;String name= new String("")
+
+/*3.赋值为null时相当于没有创建空间*/
+String name=null;=&gt;String name;
+
+/*4.引用类型判断时,通常都要先判断是否为空再判断空字符串*/
+if(name!=null&amp;&amp;name.equal(""))
+</pre><h3><a name='header-n142' class='md-header-anchor '></a>7.3 字符串主要构造函数方法</h3><figure><table><thead><tr><th style='text-align:left;' >方法</th><th style='text-align:left;' >说明</th></tr></thead><tbody><tr><td style='text-align:left;' >String()</td><td style='text-align:left;' >生成一个空串</td></tr><tr><td style='text-align:left;' >String(String  value)</td><td style='text-align:left;' >用已知串生成一个串对象</td></tr><tr><td style='text-align:left;' >String(char value[])</td><td style='text-align:left;' >用字符数组生成一个串对象</td></tr><tr><td style='text-align:left;' >String(char value[] , int offset , int count)</td><td style='text-align:left;' >用字符数组value的offset位置开始的count个字符,建立一个字符串对象,之后并不影响原来的字符串数组</td></tr><tr><td style='text-align:left;' >String(StringBuffer  value)</td><td style='text-align:left;' >用已经存在的StringBuffer对象初始化String对象</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3><a name='header-n165' class='md-header-anchor '></a>7.4 字符串比较方法</h3><blockquote><ol start='' ><li>equals()=&gt;  检查组成字符串内容的字符是否一致</li><li>&quot;==&quot;符号比较=&gt;  判断两个字符串在内存中的首地址,即判断是否是同一个字符串对象</li><li>equalslgnoreCase()方法=&gt;  忽略大小写比较</li><li>toLowerCase()方法=&gt;  将双方变为小写字符比较</li><li>toUpperCase()方法=&gt;  将双方变为大写字符比较</li><li>compareTo()方法=&gt; 按字典顺序比较两个字符串</li></ol></blockquote><h3><a name='header-n180' class='md-header-anchor '></a>7.5 字符串连接方法</h3><blockquote><ol start='' ><li>使用&quot;+&quot;</li><li>使用String类的concat()方法</li></ol></blockquote><h3><a name='header-n187' class='md-header-anchor '></a>7.6 字符串常用提取方法</h3><figure><table><thead><tr><th>方法</th><th style='text-align:left;' >说明</th></tr></thead><tbody><tr><td>public int <strong>indexOf</strong>(int ch)<br />public int <strong>indexOf</strong>(String value)</td><td style='text-align:left;' >搜索第一个出现的字符ch(或字符串value)</td></tr><tr><td>public int <strong>lastIndexOf</strong>(int ch)<br />public int <strong>lastIndexOf</strong>(String value)</td><td style='text-align:left;' >搜索最后一个出现的字符ch(或字符串value)</td></tr><tr><td>public char <strong>charAt</strong>(int index)</td><td style='text-align:left;' >查找字符串的第index个字符</td></tr><tr><td>public String <strong>substring</strong>(int index)</td><td style='text-align:left;' >提取从位置索引开始的字符串部分</td></tr><tr><td>public String <strong>substring</strong>(int beginindex,int endindex)</td><td style='text-align:left;' >提取beginindex和endindex之间的字符串部分</td></tr><tr><td>public String <strong>trim</strong>()</td><td style='text-align:left;' >返回一个前后不含任何空格的调用字符串的副本</td></tr><tr><td>public boolean <strong>startWith</strong>(String prefix)<br />public boolean <strong>endWith</strong>(String suffix)</td><td style='text-align:left;' >测试字符串的起始字符串和结束字符串(验证开头和结尾是否为输入的字符出啊)</td></tr><tr><td>public String <strong>replace</strong>(char oldChar , char new Char)</td><td style='text-align:left;' >字符串替换</td></tr><tr><td>String.<strong>split</strong>(char value)</td><td style='text-align:left;' >字符串拆分</td></tr></tbody></table></figure><h2><a name='header-n219' class='md-header-anchor '></a>8. StringBuffer类(String增强版)</h2><h3><a name='header-n220' class='md-header-anchor '></a>8.1 StringBuffer用途</h3><blockquote><p>a.用于字符串变量,也就是说字符串的值可以改变</p></blockquote><h3><a name='header-n223' class='md-header-anchor '></a>8.2 StringBuffer的代码声明与使用</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n224" mdtype="fences">/*1.StringBuffer的声明*/
+StringBuffer sb=new StringBuffer();//创建空StringBuffer对象
+StringBuffer sb=new StringBuffer(5);//创建长度为5StringBuffer对象
+StringBuffer sb=new StringBuffer("hello World");//创建一个变量存储字符串"hello World"
+
+/*2.StringBuffer的使用*/
+sb.toString();//转化为String类型
+sb.append("**");//追加字符串
+</pre><h3><a name='header-n225' class='md-header-anchor '></a>8.3 StringBuffer类的常用方法</h3><figure><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td><strong>setLength</strong>(int newlength)</td><td>重新设置字符串的长度,新串会为旧串的截余(常用来截取前几位)</td></tr><tr><td><strong>setCharAt</strong>(int index, char ch)</td><td>重设指定位置的字符串</td></tr><tr><td><strong>append</strong>(Object obj)</td><td>将指定对象转化为字符串添加到原串尾部</td></tr><tr><td><strong>insert</strong>(int offset ,Object obj)</td><td>将指定对象转换为字符串,然后插入到从offset开始的位置</td></tr><tr><td><strong>capacity</strong></td><td>求字符串容量(不等于字符串长度)</td></tr><tr><td><strong>deleteCharAt</strong>( int index)<br /><strong>delete</strong>(int start,int end)</td><td>删除字符</td></tr><tr><td><strong>reverse()</strong></td><td>翻转字符串</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><h1><a name='header-n257' class='md-header-anchor '></a>二、对象和封装</h1><h2><a name='header-n258' class='md-header-anchor '></a>9. 封装</h2><h3><a name='header-n259' class='md-header-anchor '></a>9.1 封装的概念</h3><blockquote><p>在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种将抽象性函式接口的实现细节部分包<span>	</span>   <span>		</span>装、隐藏起来的方法。</p><p>封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。</p><p>要访问该类的代码和数据，必须通过严格的接口控制。</p><p>封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。</p><p>适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。</p></blockquote><h3><a name='header-n266' class='md-header-anchor '></a>9.2 封装的优点</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="" contenteditable="false" cid="n267" mdtype="fences">		1. 良好的封装能够减少耦合。
+
+  			2. 类内部的结构可以自由修改。
+  			3. 可以对成员变量进行更精确的控制。
+  			4. 隐藏信息，实现细节。
+</pre><h2><a name='header-n268' class='md-header-anchor '></a>10. final的使用</h2><h3><a name='header-n269' class='md-header-anchor '></a>10.1 修饰类</h3><blockquote><p>当用final去修饰一个类的时候，表示这个类不能被继承。注意：</p><p>a. 被final修饰的类，final类中的成员变量可以根据自己的实际需要设计为fianl。</p><p>b. final类中的成员方法都会被隐式的指定为final方法。说明：在自己设计一个类的时候，要想好这个类将来是否<span>			</span>会被继承，如果可以被继承，则该类不能使用fianl修饰，在这里呢，一般来说工具类我们往往都会设计成为一个fianl类。在JDK中，被设计为final类的有String、System等。代码：</p></blockquote><p><img src='https://img-blog.csdnimg.cn/cc1eec885797482db3f74cf63fa615de.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><h3><a name='header-n275' class='md-header-anchor '></a>10.2 修饰方法</h3><blockquote><p>被final修饰的方法不能被重写。注意：</p><p>a. 一个类的private方法会隐式的被指定为final方法。</p><p>b. 如果父类中有final修饰的方法，那么子类不能去重写。</p></blockquote><p><strong>代码：</strong></p><p><img src='https://img-blog.csdnimg.cn/a97a2a90de984814836b89eee9e07a26.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><h3><a name='header-n282' class='md-header-anchor '></a>10.3 修饰成员变量</h3><blockquote><p>a. 必须要赋初始值，而且是只能初始化一次。</p></blockquote><p><strong>代码：</strong></p><p><img src='https://img-blog.csdnimg.cn/ebbbbe1c9e504804b43189fa82ed1436.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><h3><a name='header-n287' class='md-header-anchor '></a>10.4 修饰成员变量</h3><blockquote><p>a. 必须初始化值。</p><p>b. 被fianl修饰的成员变量赋值，有两种方式：1、直接赋值 2、全部在构造方法中赋初值。</p><p>c. 如果修饰的成员变量是基本类型，则表示这个变量的值不能改变。</p><p>d. 如果修饰的成员变量是一个引用类型，则是说这个引用的地址的值不能修改，但是这个引用所指向的对象里面的内容还是可以改变的。</p></blockquote><p><strong>代码：</strong></p><p><img src='https://img-blog.csdnimg.cn/98a8408b15da485883fccfc993c81aa9.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h2><a name='header-n296' class='md-header-anchor '></a>11. Static(静态关键字)的使用</h2><h3><a name='header-n297' class='md-header-anchor '></a>11.1 static的作用</h3><blockquote><p>static的主要作用在于创建独立于具体对象的域变量或者方法</p></blockquote><h3><a name='header-n300' class='md-header-anchor '></a>11.2 static要解决什么问题？</h3><blockquote><p>我们知道，当我们通过new关键字去创建对象的时候，那么数据的存储空间才会被分配，类中的成员方法才能被对象<span>		</span>所使用。但是呢有两种特殊的情况：</p><ol start='' ><li>我们通过new关键字创建的对象共享同一个资源，而不是说每个对象都拥有自己的数据，或者说根本就不需要去创建对象，这个资源和对象之间是没有关系的。</li><li>希望某个方法不与包含它的类的任何对象联系在一起。总结下来就是说：<strong>即使没有创建对象，也能使用属性和调用方法</strong>，static目的就是在于解决这个问题。</li></ol></blockquote><h3><a name='header-n308' class='md-header-anchor '></a>11.3 static特点</h3><blockquote><ol start='' ><li>static可以修饰变量，方法</li><li>被static修饰的变量或者方法是独立于该类的任何对象，也就是说，这些变量和方法不属于任何一个实例对象，而是被类的实例对象所共享。</li><li>在类被加载的时候，就会去加载被static修饰的部分。</li><li>被static修饰的变量或者方法是优先于对象存在的，也就是说当一个类加载完毕之后，即便没有创建对象，也可以去访问。</li></ol></blockquote><h3><a name='header-n319' class='md-header-anchor '></a>11.4 static静态变量</h3><blockquote><p>被static修饰的成员变量叫做静态变量，也叫做类变量，说明这个变量是属于这个类的，而不是属于是对象，没有被static修饰的成员变量叫做实例变量，说明这个变量是属于某个具体的对象的。</p></blockquote><h3><a name='header-n322' class='md-header-anchor '></a>11.5 静态变量和实例变量的区别</h3><blockquote><p>实例变量：每次创建对象，都会为每个对象分配成员变量内存空间，实例变量是属于实例对象的，<strong>在内存中，创建几次对象，就有几份成员变量</strong>。</p><p>静态变量：静态变量由于不属于任何实例对象，是属于类的，所以在内存中只会有一份，在类的加载过程中，JVM为静态变量分配一次内存空间</p></blockquote><h3><a name='header-n326' class='md-header-anchor '></a>11.6 static静态方法</h3><blockquote><p>被static修饰的方法也叫做静态方法，因为对于静态方法来说是不属于任何实例对象的，那么就是说在静态方法内部是不能使用this的，因为既然不属于任何对象，那么就更谈不上this了。</p></blockquote><h3><a name='header-n329' class='md-header-anchor '></a>11.7 static使用注意事项</h3><blockquote><ol start='' ><li>在静态方法中没有this关键字因为静态是随着类的加载而加载，而this是随着对象的创建而存在的。</li><li>静态比对象优先存在。静态可以访问静态的，但是静态不能访问非静态的。</li><li>非静态的可以去访问静态的</li></ol></blockquote><h3><a name='header-n338' class='md-header-anchor '></a>11.8 总结</h3><blockquote><ol start='' ><li>静态只能访问静态。</li><li>非静态既可以访问非静态的，也可以访问静态的。</li></ol></blockquote><h2><a name='header-n345' class='md-header-anchor '></a>12. 构造函数单例模式(提升知识点)</h2><h3><a name='header-n346' class='md-header-anchor '></a>12.1 概述</h3><blockquote><p>单例模式的<strong>定义</strong>就是<strong>确保某一个类只有一个实例，并且提供一个全局访问点。</strong>属于设计模式三大类中的<strong><code>创建型模式</code></strong>。
+ 单例模式具有典型的三个<strong>特点</strong>：</p><ul><li>只有一个实例。</li><li>自我实例化。</li><li>提供全局访问点。</li></ul><p>其<strong>UML</strong>结构图非常简单，就只有一个类，如下图：</p></blockquote><p><img src='https://img-blog.csdnimg.cn/8a5f4daaa14942c28a00f00945857f6d.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h3><a name='header-n359' class='md-header-anchor '></a>12.2 优缺点</h3><ul><li><strong>优点</strong>：由于单例模式只生成了一个实例，所以能够节约系统资源，减少性能开销，提高系统效率，同时也能够严格控制客户对它的访问。</li><li><strong>缺点</strong>：也正是因为系统中只有一个实例，这样就导致了单例类的职责过重，违背了“单一职责原则”，同时也没有抽象类，这样扩展起来有一定的困难。</li></ul><h3><a name='header-n365' class='md-header-anchor '></a>12.3 常见实现方式</h3><p>常见的单例模式实现方式有五种：<code>饿汉式</code>、<code>懒汉式</code>、<code>双重检测锁式</code>、<code>静态内部类式</code>和<code>枚举单例</code>。而在这五种方式中<strong><code>饿汉式</code></strong>和<strong><code>懒汉式</code></strong>又最为常见。下面将一一列举这五种方式的实现方法：</p><ul><li><strong>饿汉式</strong>：<strong>线程安全</strong>，调用效率高。但是不能延时加载。示例：</li></ul><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n370" mdtype="fences" style="break-inside: unset;">public class SingletonDemo1 {
+
+    //线程安全的
+    //类初始化时，立即加载这个对象
+    private static SingletonDemo1 instance = new SingletonDemo1();
+
+    private SingletonDemo1() {
+    }
+
+    //方法没有加同步块，所以它效率高
+    public static SingletonDemo1 getInstance() {
+        return instance;
+    }
+}
+</pre><p>由于该模式在加载类的时候对象就已经创建了，所以加载类的速度比较慢，但是获取对象的速度比较快，且是<strong>线程安全</strong>的。</p><ul><li><strong>懒汉式</strong>：<strong>线程不安全</strong>。示例：</li></ul><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n375" mdtype="fences" style="break-inside: unset;">public class SingletonDemo2 {
+
+    //线程不安全的
+
+    private static SingletonDemo2 instance = null;
+
+    private SingletonDemo2() {
+    }
+
+    //运行时加载对象
+    public static SingletonDemo2 getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemo2();
+        }
+        return instance;
+    }
+
+}
+</pre><p>由于该模式是在运行时加载对象的，所以加载类比较快，但是对象的获取速度相对较慢，且<strong>线程不安全</strong>。<strong>如果想要线程安全的话可以加上<code>synchronized</code>关键字</strong>，但是这样会付出惨重的效率代价。</p><ul><li><strong>懒汉式（双重同步锁）</strong></li></ul><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n380" mdtype="fences" style="break-inside: unset;">public class SingletonDemo3 {
+
+    private static volatile SingletonDemo3 instance = null;
+
+    private SingletonDemo3() {
+    }
+
+    //运行时加载对象
+    public static SingletonDemo3 getInstance() {
+        if (instance == null) {
+            synchronized(SingletonDemo3.class){
+                 if(instance == null){
+                     instance = new SingletonDemo3();
+                 }
+            }
+        }
+        return instance;
+    }
+
+}
+</pre><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n381" mdtype="fences">//调用
+Book book=Book.getInfo();
+</pre><p>由于剩下的几种实现方式暂没有接触过，可暂时参考<a href='https://links.jianshu.com/go?to=https%3A%2F%2Fbaijiahao.baidu.com%2Fs%3Fid%3D1570148907639754%26wfr%3Dspider%26for%3Dpc'>一张图搞定Java设计模式，单例模式</a>。</p><p><strong>注</strong>：注意单例模式所属类的<strong>构造方法是私有的</strong>，所以单例类是<strong>不能被继承的</strong>。</p><h3><a name='header-n384' class='md-header-anchor '></a>12.4 常见应用场景</h3><blockquote><ul><li>网站计数器。</li><li>项目中用于读取配置文件的类。</li><li>数据库连接池。因为数据库连接池是一种数据库资源。</li><li>Spring中，每个<code>Bean</code>默认都是单例的，这样便于Spring容器进行管理。</li><li>Servlet中<code>Application</code></li><li>Windows中任务管理器，回收站。
+等等。</li></ul></blockquote><h1><a name='header-n399' class='md-header-anchor '></a>三、继承与重写</h1><h2><a name='header-n400' class='md-header-anchor '></a>13. 访问修饰符</h2><figure><table><thead><tr><th style='text-align:left;' >修饰符</th><th style='text-align:left;' >当前类</th><th style='text-align:left;' >同一包内</th><th style='text-align:left;' >子孙类(同一包)</th><th style='text-align:left;' >子孙类(不同包)</th><th style='text-align:left;' >其他包</th></tr></thead><tbody><tr><td style='text-align:left;' ><code>public</code></td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td></tr><tr><td style='text-align:left;' ><code>protected</code></td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√/×（子类可以）</td><td style='text-align:left;' >×</td></tr><tr><td style='text-align:left;' ><code>default</code></td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >√</td><td style='text-align:left;' >×</td><td style='text-align:left;' >×</td></tr><tr><td style='text-align:left;' ><code>private</code></td><td style='text-align:left;' >√</td><td style='text-align:left;' >×</td><td style='text-align:left;' >×</td><td style='text-align:left;' >×</td><td style='text-align:left;' >×</td></tr></tbody></table></figure><h2><a name='header-n437' class='md-header-anchor '></a>14. 重写</h2><h3><a name='header-n438' class='md-header-anchor '></a>14.1 方法的重载</h3><p><span>	</span>在同一个类中,出现多个同名的方法,参数列表不同,与返回值类型,修饰符无关</p><blockquote><ul><li>方法名称必须相同。</li><li>参数列表必须不同。</li><li>方法的返回类型可以相同也可以不相同。</li><li>仅仅返回类型不同不足以称为方法的重载</li></ul></blockquote><h3><a name='header-n450' class='md-header-anchor '></a>14.2 方法的重写</h3><blockquote><p>子类中出现和父类中一模一样的方法(包括返回值类型,方法名,参数列表)</p></blockquote><h3><a name='header-n453' class='md-header-anchor '></a>14.3 方法重写的注意事项</h3><blockquote><p>1.重写的方法必须要和父类一模一样(包括返回值类型,方法名,参数列表)</p><p>2.重写的方法可以使用@Override注解来标识</p><p>3.<strong>子类中重写的方法的访问权限不能低于父类中方法的访问权限</strong></p><p><strong>权限修饰符 : private &lt;  默认(什么都不写) &lt;  protected &lt; public</strong></p></blockquote><h3><a name='header-n459' class='md-header-anchor '></a>14.4 为什么要重写方法</h3><blockquote><p>1.当父类中的方法无法满足子类需求的时候,需要方法重写</p><p>2.当子类具有特有的功能的时候,就需要方法重写</p></blockquote><h3><a name='header-n463' class='md-header-anchor '></a>14.5 重写的应用</h3><blockquote><p>子类可以根据需要，定义特定于自己的行为。既沿袭了父类的功能名称，又根据子类的需要重新实现父类方法，从而进行扩展增强。</p></blockquote><h2><a name='header-n466' class='md-header-anchor '></a>15. 抽象类</h2><h3><a name='header-n467' class='md-header-anchor '></a>15.1 概述</h3><blockquote><p>当父类知道子类应该包含什么样的方法，但无法确定子类如何实现这些方法；在分析事物时，会发现事物的共性，将共性抽取出，实现的时候，就会有这样的情况：方法功能声明相同，但方法功能主体不同，这时，将方法声明抽取出，那么，此方法就是一个抽象方法。</p></blockquote><h4><a name='header-n470' class='md-header-anchor '></a>15.1.1 抽象的定义格式</h4><blockquote><ul><li>抽象方法的定义格式：public abstract 返回值类型 方法名（参数）；</li><li>抽象类的定义格式：abstract class 类名{}</li></ul></blockquote><h4><a name='header-n477' class='md-header-anchor '></a>15.1.2 抽象的特点</h4><blockquote><ul><li>抽象类和抽象方法都需要被 abstract 修饰，抽象方法一定要定义在抽象类中</li><li>抽象不能直接创建对象，因为调用抽象方法没有意义</li><li>只有覆盖了抽象类中所有的抽象方法后，其子类才可以创建对象，否则该子类还是一个抽象类</li><li>之所以继承抽象类，更多的是在思想，是面对共性类型操作会更简单</li></ul></blockquote><h4><a name='header-n488' class='md-header-anchor '></a>15.1.3 抽象类的注意事项</h4><blockquote><ul><li>抽象类一定是个父类，因为是不断抽取而来的</li><li>抽象类中可以不定义抽象方法，其存在的意义就是不让该类创建对象，方法可以直接让子类去使用</li><li>抽象关键字 abstract 不可以和以下关键字共存：
+private：私有的方法子类是无法继承到的，也不存在覆盖，如果 abstract 和 private 一起使用修饰方法， abstract 既要子类去实现这个方法，而 private 修饰子类根本无法得到父类这个方法，互相矛盾
+final：final 修饰的类不能被继承，而抽象类一定是父类
+static：static 修饰的表示静态的，不能被修改的，但可以直接被类所调用，而abstract修饰的是抽象的，即没有方法实体，也不能直接被调用</li></ul></blockquote><h3><a name='header-n497' class='md-header-anchor '></a>15.2 代码实例</h3><p>1.先创建Develop.java父类，创建Develop抽象类，并创建抽象方法</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n499" mdtype="fences" style="break-inside: unset;">package MyAbstract;
+/**
+ * 定义开发人员类，所有开发人员都具有工作的共性，
+ * 对工作共性进行抽取，然后形成一个Develop类
+ * 定义方法：工作
+ * 抽象类不能实例化对象，即不能new，抽象方法没有主体，不能运行
+ * 抽象类的使用：可以定义类继承抽象类，将抽象方法进行重写，创建子类的对象
+ */
+public abstract class Develop {
+    //定义工作方法，但具体怎么工作，并不明白，所以干脆不说，即抽象方法
+    //必须使用abstract关键字修饰
+    //抽象的方法必须存在抽象类中，类也必须使用abstract关键字修饰
+    public abstract void work();
+}
+</pre><p>2.再创建Php.java子类，重写父类的抽象方法</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n501" mdtype="fences">package MyAbstract;
+/**
+ * 定义PHP开发人员
+ * 继承抽象类Develop，重写抽象的方法
+ */
+public class Php extends Develop {
+    //重写父类的抽象方法，去掉abstract关键字，加上方法主体
+    public void work()
+    {
+        System.out.println("正在开发网页！");
+    }
+}
+</pre><p>3.在Main.java中调用</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n503" mdtype="fences">package MyAbstract;
+public class Main {
+    public static void main(String[] args)
+    {
+        Php ph = new Php();
+        ph.work();
+    }
+}
+</pre><p><strong>实例解析</strong></p><blockquote><ul><li>将共性“研发人员”抽取出来形成一个Develop类并定义方法：工作</li><li>抽象类不能实例化，即不能 new 抽象方法没有主体</li><li>可以定义类来继承抽象类，将抽象类进行重写，然后创建子类的对象</li><li>重写父类的抽象方法时，去掉abstract关键字，加上方法主体</li></ul></blockquote><h2><a name='header-n515' class='md-header-anchor '></a>16. final修饰符</h2><blockquote><p><span>	</span>1.修饰的类,不能在被继承</p><p><span>	</span>2.修饰的方法不能被子类重写</p><p><span>	</span>3.修饰的变量将变成厂里,只能在初始化时进行赋值</p></blockquote><h1><a name='header-n520' class='md-header-anchor '></a>四、系统常用类</h1><h2><a name='header-n521' class='md-header-anchor '></a>17. Object类</h2><h3><a name='header-n522' class='md-header-anchor '></a>17.1 Object类的作用</h3><blockquote><p>1)在java中,所有的类,不管有没有定义其父类，都已Object类作为直接或间接的父类,也就是说,所有的类都继承自Object类</p></blockquote><blockquote><p>2)Object类定义了基本的成员变量和成员函数</p></blockquote><h3><a name='header-n527' class='md-header-anchor '></a>17.2 常见的需要改写的方法</h3><blockquote><h6><a name='header-n529' class='md-header-anchor '></a>1) 将对象转换成字符串的 toString() </h6><h6><a name='header-n530' class='md-header-anchor '></a>2) equals()方法</h6><h6><a name='header-n531' class='md-header-anchor '></a>3) 实现接口<span>	</span>implements  Comparable<T>  中的 compareTo(T) 定义自己需要的比较方式  </h6><h6><a name='header-n532' class='md-header-anchor '></a>eg:(所有可以 “排序” 的类都实现java.lang.Comparable接口，Comparable接口中只有一个方法。)</h6></blockquote><h2><a name='header-n533' class='md-header-anchor '></a>18 System类</h2><h3><a name='header-n534' class='md-header-anchor '></a>18.1 System类的概述</h3><blockquote><ol start='' ><li>Java.lang包下的,父类object类,被final类修饰(终止类)</li><li>System 类包含一些有用的类字段和方法。它不能被实例化。(私有了构造方法private)</li><li>其内部的成员变量和成员方法都是static的，所以可以通过System类名直接调用</li></ol></blockquote><h3><a name='header-n543' class='md-header-anchor '></a>18.2 常用的System方法</h3><h4><a name='header-n544' class='md-header-anchor '></a>18.2.1 system例举</h4><blockquote><ul><li>标准输入输出， 如out、in、err</li><li>外部定义的属性和环境变量的访问，如getenv()/setenv()和getProperties()/setProperties()</li><li>加载文件和类库的方法，如load()和loadLibrary()、</li><li>快速拷贝数组的方法：arraycopy()</li><li>jvm操作：如gc()、runFinalization()、exit()，该部分并未在源码的java doc中提到，可能因为本身不建议主动调用吧。而且这几个方法都仅仅是Runtime.getRuntime()的调用，两者没有区别</li><li>获取时间方法：<mark>System.nanoTime 和 System.currentTimeMillis</mark></li></ul></blockquote><h4><a name='header-n559' class='md-header-anchor '></a>18.2.2 system方法使用方式与功能</h4><p>System类中提供了一些系统级的操作方法，这些方法实现的功能分别如下：</p><h5><a name='header-n561' class='md-header-anchor '></a>18.2.2.1 数组拷贝</h5><blockquote><p>该方法的作用是数组拷贝，也就是将一个数组中的内容复制到另外一个数组中的指定位置，由于该方法是native方法，所以性能上比使用循环高效</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n564" mdtype="fences">/*该代码的作用是将数组a中，从下标为1开始，复制到数组b从下标3开始的位置，总共复制2个。也就是将a[1]复制给b[3]，将a[2]复制给b[4]，这样经过复制以后数组a中的值不发生变化，而数组b中的值将变成{0,0,0,2,3}。*/
+public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+//使用示例：
+int[] a = {1,2,3,4};int[] b = new int[5];
+System.arraycopy(a,1,b,3,2);
+</pre><h5><a name='header-n565' class='md-header-anchor '></a>18.2.2.2 获取当前计算机时间</h5><blockquote><p>该方法的作用是返回当前的计算机时间，时间的表达格式为当前计算机时间和GMT时间(格林威治时间)1970年1月1号0时0分0秒所差的毫秒数。例如：</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n568" mdtype="fences">/*则获得的将是一个长整型的数字，该数字就是以差值表达的当前时间。*/
+public static long currentTimeMillis()
+//使用该方法获得的时间不够直观，但是却很方便时间的计算。例如，计算程序运行需要的时间则可以使用如下的代码：
+//使用示例
+  long l = System. currentTimeMillis();
+long start = System. currentTimeMillis();
+for(int i = 0;i &lt; 100000000;i++){
+int a = 0;
+}
+long end = System. currentTimeMillis();
+long time = end – start;
+/*则这里变量time的值就代表该代码中间的for循环执行需要的毫秒数，使用这种方式可以测试不同算法的程序的执行效率高低，也可以用于后期线程控制时的精确延时实现。*/
+</pre><h5><a name='header-n569' class='md-header-anchor '></a>18.2.2.3 退出程序</h5><blockquote><p>该方法的作用是退出程序。其中status的值为0代表正常退出，非零代表异常退出。使用该方法可以在图形界面编程中实现程序的退出功能等。</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n572" mdtype="fences">public static void exit(int status)
+</pre><h5><a name='header-n573' class='md-header-anchor '></a>18.2.2.4 请求系统垃圾回收</h5><blockquote><p>该方法的作用是请求系统进行垃圾回收。至于系统是否立刻回收，则取决于系统中垃圾回收算法的实现以及系统执行时的情况。</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n576" mdtype="fences">public static void gc()
+</pre><h3><a name='header-n577' class='md-header-anchor '></a>18.3 System功能方法</h3><h4><a name='header-n578' class='md-header-anchor '></a>18.3.1 对照表</h4><figure><table><thead><tr><th>功能</th><th>描述</th></tr></thead><tbody><tr><td>java.version</td><td>Java 运行时环境版本</td></tr><tr><td>java.vendor</td><td>Java 运行时环境供应商</td></tr><tr><td>java.vendor.url</td><td>Java 供应商的 URL</td></tr><tr><td>java.home</td><td>Java 安装目录</td></tr><tr><td>java.vm.specification.version</td><td>Java 虚拟机规范版本</td></tr><tr><td>java.vm.specification.vendor</td><td>Java 虚拟机规范供应商</td></tr><tr><td>java.vm.specification.name</td><td>Java 虚拟机规范名称</td></tr><tr><td>java.vm.version</td><td>Java 虚拟机实现版本</td></tr><tr><td>java.vm.vendor</td><td>Java 虚拟机实现供应商</td></tr><tr><td>java.vm.name</td><td>Java 虚拟机实现名称</td></tr><tr><td>java.specification.version</td><td>Java 运行时环境规范版本</td></tr><tr><td>java.specification.vendor</td><td>Java 运行时环境规范供应商</td></tr><tr><td>java.specification.name</td><td>Java 运行时环境规范名称</td></tr><tr><td>java.class.version</td><td>Java 类格式版本号</td></tr><tr><td>java.class.path</td><td>Java 类路径</td></tr><tr><td>java.library.path</td><td>加载库时搜索的路径列表</td></tr><tr><td>java.io.tmpdir</td><td>默认的临时文件路径</td></tr><tr><td>java.compiler</td><td>要使用的 JIT 编译器的名称</td></tr><tr><td>java.ext.dirs</td><td>一个或多个扩展目录的路径</td></tr><tr><td>os.name</td><td>操作系统的名称</td></tr><tr><td>os.arch</td><td>操作系统的架构</td></tr><tr><td>os.version</td><td>操作系统的版本</td></tr><tr><td>file.separator</td><td>文件分隔符（在 UNIX 系统中是“/”）</td></tr><tr><td>path.separator</td><td>路径分隔符（在 UNIX 系统中是“:”）</td></tr><tr><td>line.separator</td><td>行分隔符（在 UNIX 系统中是“/n”）</td></tr><tr><td>user.name</td><td>用户的账户名称</td></tr><tr><td>user.home</td><td>用户的主目录</td></tr><tr><td>user.dir</td><td>用户的当前工作目录</td></tr></tbody></table></figure><h4><a name='header-n667' class='md-header-anchor '></a>18.3.2 测试使用</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n668" mdtype="fences" style="break-inside: unset;">public class SystemTest {
+	public static void main(String[] args) {
+		System.out.println("Java 运行时环境版本         :" + System.getProperty("java.version"));
+		System.out.println("Java 运行时环境供应商     :" + System.getProperty("java.vendor"));
+		System.out.println("Java 运行时环境规范版本    :" + System.getProperty("java.specification.version"));
+		System.out.println("Java 运行时环境规范供应商:" + System.getProperty("java.specification.vendor"));
+		System.out.println("Java 运行时环境规范名称    :" + System.getProperty("java.specification.name"));
+		System.out.println("操作系统的名称:" + System.getProperty("os.name"));
+		System.out.println("操作系统的架构:" + System.getProperty("os.arch"));
+		System.out.println("操作系统的版本:" + System.getProperty("os.version"));
+		System.out.println("用户的账户名称          :" + System.getProperty("user.name"));
+		System.out.println("用户的主目录              :" + System.getProperty("user.home"));
+		System.out.println("用户的当前工作目录  : " + System.getProperty("user.dir"));
+	}
+}
+</pre><h2><a name='header-n669' class='md-header-anchor '></a>19. 数据类型类</h2><h3><a name='header-n670' class='md-header-anchor '></a>19.1 数值类</h3><h4><a name='header-n671' class='md-header-anchor '></a>19.1.1 数值类的定义与功能</h4><blockquote><p>a.在java中,对应byte,short,int,long,float,double等简单数据类型,分别有一个对应的数值类:<mark>Byte,Short,Integer,Long,Float,Double</mark></p><p>b.他们都是从数据类Number继承而来的</p><p>c.数值类的作用是拓展数据处理的功能</p><p>d.针对字符类型char,Java提供了<mark>字符类Character</mark>;</p><p>e.针对booleab,java提供了<mark>Boolean</mark>类</p></blockquote><h4><a name='header-n678' class='md-header-anchor '></a>19.1.2 数值类转换</h4><blockquote><p><span>	</span>a.将数据准换成字符串:toString()</p><p><span>	</span>b.将字符串转化为数字: <mark>valueOf()   parseInt()和parseDouble()</mark></p></blockquote><h3><a name='header-n682' class='md-header-anchor '></a>19.2 字符类</h3><h3><a name='header-n683' class='md-header-anchor '></a>19.3 数学类</h3><h4><a name='header-n684' class='md-header-anchor '></a>19.3.1 Math作用</h4><blockquote><p>提供执行任意精度整数运算（ BigInteger ）和任意精度十进制运算（ BigDecimal ）的类。</p><p>float和double类型的主要设计目标是为了科学计算和工程计算。他们执行二进制浮点运算，这是为了在广域数值范围上提供较为精确的快速近似计算而精心设计的。然而，它们没有提供完全精确的结果，所以不应该被用于要求精确结果的场合。但是，商业计算往往要求结果精确，这时候BigDecimal就派上大用场啦。</p></blockquote><h4><a name='header-n688' class='md-header-anchor '></a>19.3.2 BigDecimal(任意精度整数运算)</h4><h5><a name='header-n689' class='md-header-anchor '></a>19.3.2.1 BigDecimal概念</h5><blockquote><p>float和double类型的主要设计目标是为了科学计算和工程计算。他们执行二进制浮点运算，这是为了在广域数值范围上提供较为精确的快速近似计算而精心设计的。然而，它们没有提供完全精确的结果，所以不应该被用于要求精确结果的场合。但是，商业计算往往要求结果精确，这时候BigDecimal就派上大用场啦。</p></blockquote><h5><a name='header-n692' class='md-header-anchor '></a>19.3.2.2 十进制字符串 转 BigDecimal</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n693" mdtype="fences">//BigInteger构造函数中有一个将十进制字符串转成成BigInteger,注意：BigInteger没有无参构造函数
+BigInteger  bigInteger = new BigInteger("100")//100
+  //BigInteger还可以通过valueOf方法将普通数值转成大数值
+  BigInteger valueOf = BigInteger.valueOf(1000);
+System.out.println(valueOf);
+</pre><h5><a name='header-n694' class='md-header-anchor '></a>19.3.2.3 BigInteger提供的数学计算方式</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n695" mdtype="fences" style="break-inside: unset;">   //BigInteger提供了各种数学计算的方式，比如绝对值，异或运算	
+	public static void main(String[] args) {
+        BigInteger bigInteger = new BigInteger("100");
+        BigInteger valueOf = BigInteger.valueOf(1000);
+        //加法
+        BigInteger add = valueOf.add(bigInteger);
+        //减法
+        BigInteger subtract = valueOf.subtract(bigInteger);
+        //除法
+        BigInteger divide = valueOf.divide(bigInteger);
+        //乘法
+        BigInteger multiply = valueOf.multiply(bigInteger);
+        //转成double  当然floatValue，intValue，longValue
+        double v = valueOf.doubleValue();
+        //比较是否相等
+        boolean equals = valueOf.equals(bigInteger);
+        //求负数
+        BigInteger negate = valueOf.negate();
+        //转换成字符串
+        String s = valueOf.toString();
+    }
+</pre><h5><a name='header-n696' class='md-header-anchor '></a>19.3.2.4 普通计算精度丢失示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n697" mdtype="fences">    public static void main(String[] args) {
+        System.out.println(0.2 + 0.1);
+        System.out.println(0.3 - 0.1);
+        System.out.println(0.2 * 0.1);
+        System.out.println(0.3 / 0.1);
+    }
+//运行结果
+0.30000000000000004   0.19999999999999998   0.020000000000000004    2.9999999999999996
+</pre><blockquote><p>你认为你看错了，但结果却是是这样的。问题在哪里呢？原因在于我们的计算机是二进制的。浮点数没有办法是用二进制进行精确表示。我们的CPU表示浮点数由两个部分组成：<strong>指数和尾数</strong>，这样的表示方法一般都会失去一定的精确度，有些浮点数运算也会产生一定的误差。如：2.4的二进制表示并非就是精确的2.4。反而最为接近的二进制表示是 2.3999999999999999。浮点数的值实际上是由一个特定的数学公式计算得到的。</p></blockquote><h5><a name='header-n700' class='md-header-anchor '></a>19.3.2.5 BigDecimal构造方法</h5><blockquote><p>1.public BigDecimal(double val) 将double表示形式转换为BigDecimal *不建议使用</p><p>2.public BigDecimal(int val)　　将int表示形式转换成BigDecimal</p><p>3.public BigDecimal(String val)　　将String表示形式转换成BigDecimal</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n705" mdtype="fences">    public static void main(String[] args)
+    {
+    	 BigDecimal bigDecimal = new BigDecimal(2);
+        BigDecimal bDouble = new BigDecimal(2.3);
+        BigDecimal bString = new BigDecimal("2.3");
+        System.out.println("bigDecimal=" + bigDecimal);
+        System.out.println("bDouble=" + bDouble);
+        System.out.println("bString=" + bString); }
+//运行结果
+bigDecimal=2
+bDouble=2.29999999999999982236431605997495353221893310546875
+bString=2.3
+123456789
+</pre><h5><a name='header-n706' class='md-header-anchor '></a>19.3.2.6 BigDecimal生命是精度丢失</h5><p><strong>为什么会出现这种情况呢？</strong></p><blockquote><p>JDK的描述：1、参数类型为double的构造方法的结果有一定的不可预知性。有人可能认为在Java中写入newBigDecimal(0.1)所创建的BigDecimal正好等于 0.1（非标度值 1，其标度为 1），但是它实际上等于0.1000000000000000055511151231257827021181583404541015625。这是因为0.1无法准确地表示为 double（或者说对于该情况，不能表示为任何有限长度的二进制小数）。这样，传入到构造方法的值不会正好等于 0.1（虽然表面上等于该值）。</p><p>2、另一方面，String 构造方法是完全可预知的：写入 newBigDecimal(“0.1”) 将创建一个 BigDecimal，它正好等于预期的 0.1。因此，比较而言，通常建议优先使用String构造方法。</p></blockquote><p><strong>当double必须用作BigDecimal时，请使用Double.toString(double)转成String，然后使用String构造方法，<span>			</span>或使用BigDecimal的静态方法valueOf，如下</strong></p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n712" mdtype="fences">    public static void main(String[] args)
+    {
+        BigDecimal bDouble1 = BigDecimal.valueOf(2.3);
+        BigDecimal bDouble2 = new BigDecimal(Double.toString(2.3));
+
+        System.out.println("bDouble1=" + bDouble1);
+        System.out.println("bDouble2=" + bDouble2);
+  }
+//运行结果
+bDouble1=2.3    bDouble2=2.3
+
+</pre><h5><a name='header-n713' class='md-header-anchor '></a>19.3.2.7 除法运算divide注意点</h5><blockquote><p>BigDecimal除法可能出现不能整除的情况，比如 4.5/1.3，这时会报错java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.</p><p>其实divide方法有可以传三个参数</p><p>public BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)
+第一参数表示除数， 第二个参数表示小数点后保留位数，
+第三个参数表示舍入模式，只有在作除法运算或四舍五入时才用到舍入模式，有下面这几种</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n718" mdtype="fences">ROUND_CEILING    //向正无穷方向舍入
+ROUND_DOWN    //向零方向舍入
+ROUND_FLOOR    //向负无穷方向舍入
+ROUND_HALF_DOWN    //向（距离）最近的一边舍入，除非两边（的距离）是相等,如果是这样，向下舍入, 例如1.55 保留一位小数结果为1.5
+ROUND_HALF_EVEN    //向（距离）最近的一边舍入，除非两边（的距离）是相等,如果是这样，如果保留位数是奇数，使用ROUND_HALF_UP，如果是偶数，使用ROUND_HALF_DOWN
+ROUND_HALF_UP    //向（距离）最近的一边舍入，除非两边（的距离）是相等,如果是这样，向上舍入, 1.55保留一位小数结果为1.6
+ROUND_UNNECESSARY    //计算结果是精确的，不需要舍入模式
+ROUND_UP    //向远离0的方向舍入
+123456789101112131415
+</pre><blockquote><p>按照各自的需要，可传入合适的第三个参数。四舍五入采用 ROUND_HALF_UP</p><p>需要对BigDecimal进行截断和四舍五入可用setScale方法，例：</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n722" mdtype="fences">public static void main(String[] args)
+    {
+        BigDecimal a = new BigDecimal("4.5635");
+        a = a.setScale(3, RoundingMode.HALF_UP);    //保留3位小数，且四舍五入
+        System.out.println(a);//4.564
+    }
+1234567
+</pre><blockquote><p>减乘除其实最终都返回的是一个新的BigDecimal对象，因为BigInteger与BigDecimal都是不可变的（immutable）的，在进行每一步运算时，都会产生一个新的对象。</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n725" mdtype="fences">    public static void main(String[] args)
+    {
+        BigDecimal a = new BigDecimal("4.5");
+        BigDecimal b = new BigDecimal("1.5");
+        BigDecimal add = a.add(b);
+
+        System.out.println(add);//6.0
+        System.out.println(a);  //输出4.5. 加减乘除方法会返回一个新的BigDecimal对象，原来的a不变
+
+
+    }
+1234567891011
+</pre><p><strong>注意</strong>：</p><blockquote><p>(1)商业计算使用BigDecimal。</p></blockquote><blockquote><p>(2)<strong>尽量使用参数类型为String的构造函数</strong>。</p><p>(3) BigDecimal都是不可变的（immutable）的，在进行每一步运算时，都会产生一个新的对象，所以在做加减乘除运算时千万要保存操作后的值。</p><p>(4)我们往往容易忽略JDK底层的一些实现细节，导致出现错误，需要多加注意。</p><p>(5)<strong>BigInteger不能通过基本数据类型的加减乘除(+,-,*,/)方式处理，而是通过方法来处理</strong></p></blockquote><h4><a name='header-n734' class='md-header-anchor '></a>19.3.3 Math常用静态方法</h4><figure><table><thead><tr><th style='text-align:left;' >序号</th><th style='text-align:left;' >方法与描述</th></tr></thead><tbody><tr><td style='text-align:left;' >1</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-xxxvalue.html'>xxxValue()</a> 将 Number 对象转换为xxx数据类型的值并返回。</td></tr><tr><td style='text-align:left;' >2</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-compareto.html'>compareTo()</a> 将number对象与参数比较。</td></tr><tr><td style='text-align:left;' >3</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-equals.html'>equals()</a> 判断number对象是否与参数相等。</td></tr><tr><td style='text-align:left;' >4</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-valueof.html'>valueOf()</a> 返回一个 Number 对象指定的内置数据类型</td></tr><tr><td style='text-align:left;' >5</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-tostring.html'>toString()</a> 以字符串形式返回值。</td></tr><tr><td style='text-align:left;' >6</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-parseInt.html'>parseInt()</a> 将字符串解析为int类型。</td></tr><tr><td style='text-align:left;' >7</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-abs.html'>abs()</a> 返回参数的绝对值。</td></tr><tr><td style='text-align:left;' >8</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-ceil.html'>ceil()</a> 返回大于等于( &gt;= )给定参数的的最小整数，类型为双精度浮点型。</td></tr><tr><td style='text-align:left;' >9</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-floor.html'>floor()</a> 返回小于等于（&lt;=）给定参数的最大整数 。</td></tr><tr><td style='text-align:left;' >10</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-rint.html'>rint()</a> 返回与参数最接近的整数。返回类型为double。</td></tr><tr><td style='text-align:left;' >11</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-round.html'>round()</a> 它表示<strong>四舍五入</strong>，算法为 <strong>Math.floor(x+0.5)</strong>，即将原来的数字加上 0.5 后再向下取整，所以，Math.round(11.5) 的结果为12，Math.round(-11.5) 的结果为-11。</td></tr><tr><td style='text-align:left;' >12</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-min.html'>min()</a> 返回两个参数中的最小值。</td></tr><tr><td style='text-align:left;' >13</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-max.html'>max()</a> 返回两个参数中的最大值。</td></tr><tr><td style='text-align:left;' >14</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-exp.html'>exp()</a> 返回自然数底数e的参数次方。</td></tr><tr><td style='text-align:left;' >15</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-log.html'>log()</a> 返回参数的自然数底数的对数值。</td></tr><tr><td style='text-align:left;' >16</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-pow.html'>pow()</a> 返回第一个参数的第二个参数次方。</td></tr><tr><td style='text-align:left;' >17</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-sqrt.html'>sqrt()</a> 求参数的算术平方根。</td></tr><tr><td style='text-align:left;' >18</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-sin.html'>sin()</a> 求指定double类型参数的正弦值。</td></tr><tr><td style='text-align:left;' >19</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-cos.html'>cos()</a> 求指定double类型参数的余弦值。</td></tr><tr><td style='text-align:left;' >20</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-tan.html'>tan()</a> 求指定double类型参数的正切值。</td></tr><tr><td style='text-align:left;' >21</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-asin.html'>asin()</a> 求指定double类型参数的反正弦值。</td></tr><tr><td style='text-align:left;' >22</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-acos.html'>acos()</a> 求指定double类型参数的反余弦值。</td></tr><tr><td style='text-align:left;' >23</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-atan.html'>atan()</a> 求指定double类型参数的反正切值。</td></tr><tr><td style='text-align:left;' >24</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-atan2.html'>atan2()</a> 将笛卡尔坐标转换为极坐标，并返回极坐标的角度值。</td></tr><tr><td style='text-align:left;' >25</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-todegrees.html'>toDegrees()</a> 将参数转化为角度。</td></tr><tr><td style='text-align:left;' >26</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-toradians.html'>toRadians()</a> 将角度转换为弧度。</td></tr><tr><td style='text-align:left;' >27</td><td style='text-align:left;' ><a href='https://www.runoob.com/java/number-random.html'>random()</a> 返回一个随机数。</td></tr></tbody></table></figure><h3><a name='header-n820' class='md-header-anchor '></a>19.4 时间类型Date</h3><h4><a name='header-n821' class='md-header-anchor '></a>19.4.1 Date类对象创建</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="" contenteditable="false" cid="n822" mdtype="fences">//1.创建一个代表系统当前日期的Date对象
+ Date d = new Date();
+ 
+ 使用带参数的构造方法Date(int year, int month, int day) ，可以构造指定日期的Date类对象，Date类中年份的参数应该是实际需要代表的年份减去1900，实际需要代表的月份减去1以后的值。
+//2.创建一个代表2014年6月12号的Date对象
+Date d1 = new Date(2014-1900, 6-1, 12); （注意参数的设置）
+</pre><h4><a name='header-n823' class='md-header-anchor '></a>19.4.2 Date时间格式转换</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n824" mdtype="fences">　/*java.text.SimpleDateFormat是一个以与语言环境有关的方式来格式化和解析日期的具体类.
+　注意：yyyy-MM-dd HH:mm:ss这里的大小写要明确，可以参见JDK API  java.text.SimpleDateFormat 　　*/
+       DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       //创建日期的对象，通过format()方法将日期对象格式化，格式化后是String类型
+       Date date = new Date();
+       System.out.println(dateFormat.format(date));
+</pre><h3><a name='header-n825' class='md-header-anchor '></a>19.5 随机数类Random</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="" contenteditable="false" cid="n826" mdtype="fences">	Random ran=new Random();
+	System.out.println(ran.nextInt(5));
+</pre><h1><a name='header-n827' class='md-header-anchor '></a>五、异常、log4j使用</h1><h2><a name='header-n828' class='md-header-anchor '></a>20. Java如何进行异常处理</h2><p>Java异常机制用到的几个关键字：try、catch、finally、throw、throws。</p><blockquote><ul><li><strong>try</strong>     -- 用于监听。将要被监听的代码(可能抛出异常的代码)放在try语句块之内，当try语句块内发生异常时，异常就被抛出。</li><li><strong>catch</strong>  -- 用于捕获异常。catch用来捕获try语句块中发生的异常。</li><li><strong>finally</strong> -- finally语句块总是会被执行。它主要用于回收在try块里打开的物力资源(如数据库连接、网络连接和磁盘文件)。只有finally块，执行完成之后，才会回来执行try或者catch块中的return或者throw语句，如果finally中使用了return或者throw等终止方法的语句，则就不会跳回执行，直接停止。</li><li><strong>throw</strong>  -- 用于抛出异常。</li><li><strong>throws</strong> -- 用在方法签名中，用于声明该方法可能抛出的异常。<strong>主方法上也可以使用throws抛出。</strong>如果在主方法上使用了throws抛出，就表示在主方法里面可以不用强制性进行异常处理，如果出现了异常，就交给JVM进行默认处理，则此时会导致程序中断执行</li></ul></blockquote><h3><a name='header-n842' class='md-header-anchor '></a>20.1 异常的使用及执行流程</h3><h4><a name='header-n843' class='md-header-anchor '></a>20.1.1 异常的处理方案</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="" contenteditable="false" cid="n844" mdtype="fences">try...catch、try...catch...finally、try...finally
+   try{
+     可能会发生的异常
+   }catch(异常类型 异常名(变量)){
+     针对异常进行处理的代码
+   }catch(异常类型 异常名(变量)){
+     针对异常进行处理的代码
+   }...
+  [finally{
+     释放资源代码；
+   }]
+</pre><p><strong>注意：</strong></p><blockquote><ul><li>catch 不能独立于 try 存在。</li><li>catch里面不能没有内容</li><li>在 try/catch 后面添加 finally 块并非强制性要求的。</li><li>try 代码后不能既没 catch 块也没 finally 块。</li><li>try里面越少越好。</li><li>try, catch, finally 块之间不能添加任何代码。</li><li>finally里面的代码最终一定会执行（除了JVM退出）</li><li>如果程序可能存在多个异常，需要多个catch进行捕获。</li><li>异常如果是同级关系，catch谁前谁后没有关系
+如果异常之间存在上下级关系，上级需要放在后面</li></ul></blockquote><h4><a name='header-n866' class='md-header-anchor '></a>20.1.2 异常的执行流程</h4><p><img src='https://img-blog.csdnimg.cn/a41b61c271dd4200b129cbc5906d5771.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><h2><a name='header-n868' class='md-header-anchor '></a>21. 异常方法</h2><p>下面的列表是 Throwable 类的主要方法:</p><figure><table><thead><tr><th style='text-align:left;' ><strong>序号</strong></th><th style='text-align:left;' ><strong>方法及说明</strong></th></tr></thead><tbody><tr><td style='text-align:left;' >1</td><td style='text-align:left;' ><strong>public String getMessage()</strong> 返回关于发生的异常的详细信息。这个消息在Throwable 类的构造函数中初始化了。</td></tr><tr><td style='text-align:left;' >2</td><td style='text-align:left;' ><strong>public Throwable getCause()</strong> 返回一个Throwable 对象代表异常原因。</td></tr><tr><td style='text-align:left;' >3</td><td style='text-align:left;' ><strong>public String toString()</strong> 使用getMessage()的结果返回类的串级名字。</td></tr><tr><td style='text-align:left;' >4</td><td style='text-align:left;' ><strong>public void printStackTrace()</strong> 打印toString()结果和栈层次到System.err，即错误输出流。</td></tr><tr><td style='text-align:left;' >5</td><td style='text-align:left;' ><strong>public StackTraceElement [] getStackTrace()</strong> 返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。</td></tr><tr><td style='text-align:left;' >6</td><td style='text-align:left;' ><strong>public Throwable fillInStackTrace()</strong> 用当前的调用栈层次填充Throwable 对象栈层次，添加到栈层次任何先前信息中。</td></tr></tbody></table></figure><h2><a name='header-n892' class='md-header-anchor '></a>22. Java 内置异常类</h2><figure><table><thead><tr><th style='text-align:left;' ><strong>异常</strong></th><th style='text-align:left;' ><strong>描述</strong></th></tr></thead><tbody><tr><td style='text-align:left;' ><code>ArithmeticException</code></td><td style='text-align:left;' >当出现异常的运算条件时，抛出此异常。例如，一个整数&quot;除以零&quot;时，抛出此类的一个实例。</td></tr><tr><td style='text-align:left;' >ArrayIndexOutOfBoundsException</td><td style='text-align:left;' >用非法索引访问数组时抛出的异常。如果索引为负或大于等于数组大小，则该索引为非法索引。</td></tr><tr><td style='text-align:left;' >ArrayStoreException</td><td style='text-align:left;' >试图将错误类型的对象存储到一个对象数组时抛出的异常。</td></tr><tr><td style='text-align:left;' >ClassCastException</td><td style='text-align:left;' >当试图将对象强制转换为不是实例的子类时，抛出该异常。</td></tr><tr><td style='text-align:left;' >IllegalArgumentException</td><td style='text-align:left;' >抛出的异常表明向方法传递了一个不合法或不正确的参数。</td></tr><tr><td style='text-align:left;' >IllegalMonitorStateException</td><td style='text-align:left;' >抛出的异常表明某一线程已经试图等待对象的监视器，或者试图通知其他正在等待对象的监视器而本身没有指定监视器的线程。</td></tr><tr><td style='text-align:left;' >IllegalStateException</td><td style='text-align:left;' >在非法或不适当的时间调用方法时产生的信号。换句话说，即 Java 环境或 Java 应用程序没有处于请求操作所要求的适当状态下。</td></tr><tr><td style='text-align:left;' >IllegalThreadStateException</td><td style='text-align:left;' >线程没有处于请求操作所要求的适当状态时抛出的异常。</td></tr><tr><td style='text-align:left;' ><code>IndexOutOfBoundsException</code></td><td style='text-align:left;' >指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。</td></tr><tr><td style='text-align:left;' >NegativeArraySizeException</td><td style='text-align:left;' >如果应用程序试图创建大小为负的数组，则抛出该异常。</td></tr><tr><td style='text-align:left;' >NullPointerException</td><td style='text-align:left;' >当应用程序试图在需要对象的地方使用 <code>null</code> 时，抛出该异常</td></tr><tr><td style='text-align:left;' ><code>NumberFormatException</code></td><td style='text-align:left;' >当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</td></tr><tr><td style='text-align:left;' >SecurityException</td><td style='text-align:left;' >由安全管理器抛出的异常，指示存在安全侵犯。</td></tr><tr><td style='text-align:left;' >StringIndexOutOfBoundsException</td><td style='text-align:left;' >此异常由 <code>String</code> 方法抛出，指示索引或者为负，或者超出字符串的大小。</td></tr><tr><td style='text-align:left;' >UnsupportedOperationException</td><td style='text-align:left;' >当不支持请求的操作时，抛出该异常。</td></tr><tr><td style='text-align:left;' >ClassNotFoundException</td><td style='text-align:left;' >应用程序试图加载类时，找不到相应的类，抛出该异常。</td></tr><tr><td style='text-align:left;' >CloneNotSupportedException</td><td style='text-align:left;' >当调用 <code>Object</code> 类中的 <code>clone</code> 方法克隆对象，但该对象的类无法实现 <code>Cloneable</code> 接口时，抛出该异常。</td></tr><tr><td style='text-align:left;' >IllegalAccessException</td><td style='text-align:left;' >拒绝访问一个类的时候，抛出该异常。</td></tr><tr><td style='text-align:left;' >InstantiationException</td><td style='text-align:left;' >当试图使用 <code>Class</code> 类中的 <code>newInstance</code> 方法创建一个类的实例，而指定的类对象因为是一个接口或是一个抽象类而无法实例化时，抛出该异常。</td></tr><tr><td style='text-align:left;' >InterruptedException</td><td style='text-align:left;' >一个线程被另一个线程中断，抛出该异常。</td></tr><tr><td style='text-align:left;' >NoSuchFieldException</td><td style='text-align:left;' >请求的变量不存在</td></tr><tr><td style='text-align:left;' >NoSuchMethodException</td><td style='text-align:left;' >请求的方法不存在</td></tr></tbody></table></figure><h2><a name='header-n963' class='md-header-anchor '></a>23. 异常相关问题</h2><h3><a name='header-n964' class='md-header-anchor '></a>23.1 Error与Exception的区别</h3><blockquote><p>Error（错误）是系统中的错误，程序员是不能改变的和处理的，是在程序编译时出现的错误，只能通过修改程序才能修正。一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢等。对于这类错误的导致的应用程序中断，仅靠程序本身无法恢复和和预防，遇到这样的错误，建议让程序终止。</p><p>Exception（异常）表示程序可以处理的异常，可以捕获且可能恢复。遇到这类异常，应该尽可能处理异常，使程序恢复运行，而不应该随意终止异常。</p></blockquote><h3><a name='header-n968' class='md-header-anchor '></a>23.2 在catch捕获异常时，为什么不考虑使用Throwable类型，而只是使用Exception来进行接收？</h3><blockquote><p>Throwable表示的范围要比Exception大。实际上程序使用Throwable来进行处理，没有任何语法问题，但是却会存在逻辑问题。因为此时出现的（或者说用户能够处理的）只有Exception类型，而如果使用Throwable接收，还会表示可以处理Error的错误，而用户是处理不了Error错误的，所以在开发中用户可以处理的异常都要求以Exception类为主。</p></blockquote><h3><a name='header-n971' class='md-header-anchor '></a>23.3 异常是一起处理好还是分开处理好？</h3><blockquote><p><strong>根据实际的开发要求是否严格来决定。</strong>在实际的项目开发项目工作中，所有的异常是统一使用Exception处理还是分开处理，完全根据开发者的项目开发标准来决定。如果项目开发环境严谨，基本上要求针对每一种异常分别进行处理，并且要详细记录下异常产生的时间以及产生的位置，这样可以方便程序维护人员进行代码的维护。<strong>再次注意：处理多个异常时，捕获范围小的异常要放在捕获范围大的异常之前处理。</strong></p></blockquote><h3><a name='header-n974' class='md-header-anchor '></a>23.4 throw和throws的区别？</h3><blockquote><p>throw和throws都是在异常处理中使用的关键字，区别如下：</p><ul><li>throw：指的是在方法中人为抛出一个异常对象（这个异常对象可能是自己实例化或者抛出已存在的）；</li><li>throws：在方法的声明上使用，表示此方法在调用时必须处理异常。</li></ul></blockquote><h3><a name='header-n982' class='md-header-anchor '></a>23.5 检查型异常（Checked Exception）与非检查型异常（Unchecked Exception）区别？</h3><blockquote><ul><li>所有的检查性异常都继承自java.lang.Exception；所有的非检查性异常都继承自java.lang.RuntimeEx ception。</li><li>检查性异常和非检查性异常最主要的区别在于其处理异常的方式：检查性异常必须使用try catch或者throws等关键字进行处理，否则编译器会报错;非检查性异常一般是程序代码写的不够严谨而导致的问题，可以通过修改代码来规避。</li><li>常见的运行时异常：空指针异常(NullPointerException)、除零异常(ArithmeticException)、数组越界异常(ArrayIndexOutOfBoundsException)等;</li><li>常见的检查性异常：输入输出异常(IOException)、文件不存在异常(FileNotFoundException)、SQL语句异常(SQLException)等。</li></ul></blockquote><h2><a name='header-n993' class='md-header-anchor '></a>24. 自定义异常</h2><blockquote><p>在 Java 中你可以自定义异常。如果要自定义异常类，则扩展Exception类即可，因此这样的自定义异常都属于检查异常（checked exception）。如果要自定义非检查异常，则扩展自RuntimeException。</p><p>按照国际惯例，自定义的异常应该总是包含如下的构造函数：</p><ul><li>一个无参构造函数</li><li>一个带有String参数的构造函数，并传递给父类的构造函数。</li><li>一个带有String参数和Throwable参数，并都传递给父类构造函数</li><li>一个带有Throwable 参数的构造函数，并传递给父类的构造函数。</li></ul></blockquote><p>下面是IOException类的完整源代码，可以借鉴。</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1007" mdtype="fences" style="break-inside: unset;">package java.io;
+
+public class IOException extends Exception {
+    static final long serialVersionUID = 7818375828146090155L;
+
+    public IOException() {
+	super();
+    }
+    public IOException(String message) {
+	super(message);
+    }
+    public IOException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    public IOException(Throwable cause) {
+        super(cause);
+    }
+
+}
+</pre><p><strong>finally块和return</strong></p><blockquote><ul><li>首先一个不容易理解的事实：在 try块中即便有return，break，continue等改变执行流的语句，finally也会执行。</li><li>finally中的return 会覆盖 try 或者catch中的返回值。</li><li>finally中的return或异常会抑制（消灭）前面try或者catch块中的异常。</li></ul></blockquote><h2><a name='header-n1017' class='md-header-anchor '></a>25. logger4j使用步骤</h2><blockquote><p>使用log4j的步骤</p><p>第一步 :在项目中加入log4j,所使用的JAR文件</p><p>第二步:创建log4j.properties文件(在src目录下)</p><p>第三步,编写log4j.properties,配置日志信息:</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="xml" contenteditable="false" cid="n1023" mdtype="fences" style="break-inside: unset;">### \u8BBE\u7F6ELogger\u8F93\u51FA\u7EA7\u522B\u548C\u8F93\u51FA\u76EE\u7684\u5730 ###
+log4j.rootLogger=debug,stdout,logfile
+
+### \u628A\u65E5\u5FD7\u4FE1\u606F\u8F93\u51FA\u5230\u63A7\u5236\u53F0 ###
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.err
+log4j.appender.stdout.layout=org.apache.log4j.SimpleLayout
+
+### \u628A\u65E5\u5FD7\u4FE1\u606F\u8F93\u51FA\u5230\u6587\u4EF6\uFF1Ajbit.log ###
+log4j.appender.logfile=org.apache.log4j.FileAppender
+log4j.appender.logfile.File=log.log
+log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logfile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %l %F %p %m%n
+
+</pre><blockquote><p>第四步：创建Logger对象</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="" contenteditable="false" cid="n1026" mdtype="fences">		Logger logger = Logger.getLogger(类.class.getName());
+</pre><blockquote><p>第五步：调用方法：logger.debug(message);</p></blockquote><h1><a name='header-n1029' class='md-header-anchor '></a>六、集合框架</h1><h2><a name='header-n1030' class='md-header-anchor '></a>26. Collection</h2><h3><a name='header-n1031' class='md-header-anchor '></a>26.1 Collection接口的方法</h3><blockquote><p>Collection接口定义了很多方法，开发者如果要开发自己的集合类，可以继承AbstractCollection抽象类，该类实现了Collection的很多方法，但是还有<code>size()</code>和<code>Iterator()</code>没实现</p></blockquote><figure><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td><code>iterator()</code></td><td>获取迭代器</td></tr><tr><td><code>size()</code></td><td>元素个数</td></tr><tr><td><code>isEmpty()</code></td><td>判断有无元素</td></tr><tr><td><code>clear()</code></td><td>清空集合</td></tr><tr><td><code>contains()</code></td><td>是否包含给定元素</td></tr><tr><td><code>containsAll()</code></td><td>是否包含给定集合所有元素</td></tr><tr><td><code>add()</code></td><td>添加元素</td></tr><tr><td><code>addAll()</code></td><td>添加给定集合所有元素</td></tr><tr><td><code>remove()</code></td><td>删除元素</td></tr><tr><td><code>removeAll()</code></td><td>删除给定集合中所有元素</td></tr><tr><td><code>retainAll()</code></td><td>删除给定集合中不存在的元素，即取交集</td></tr><tr><td><code>toArray()</code></td><td>返回集合的对象数组</td></tr><tr><td><code>toArray(array)</code></td><td>同上，不过指定一个数组参数</td></tr></tbody></table></figure><h3><a name='header-n1077' class='md-header-anchor '></a>26.2 Collection包含了List和Set两大分支</h3><blockquote><p>(1)Collection接口存储-组不唯一,无序的对象</p><p>(2) List是一个有序的队列，实现类有4个：LinkedList, ArrayList, Vector, Stack。</p><p>(3) Set是一个不允许有重复元素的集合。实现类有3个：TreeSet、HastSet、LinkHastSe</p></blockquote><h3><a name='header-n1082' class='md-header-anchor '></a>26.3 List接口常用方法</h3><figure><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>boolean add(Object 0)</td><td>在列表的末尾顺序添加元素，起始索引位置从0开始</td></tr><tr><td>void add(int index, Object 0)</td><td>在指定的索引位置添加元素。索引位置必须介于0和列表中元素个数之间</td></tr><tr><td>int size()</td><td>返回列表中的元素个数</td></tr><tr><td>Object get(int index)</td><td>返回指定索引位置处的元素。取出的元素是Object类型，使用前需要进行强制类型转换</td></tr><tr><td>boolean contains(Object 0)</td><td>判断列中是否存在指定元素</td></tr><tr><td>boolean remove(Object 0)</td><td>从列表中删除元素</td></tr><tr><td>Object remove(int index)</td><td>从列表中删除指定位置元素，起始索引位置从0开始</td></tr></tbody></table></figure><h4><a name='header-n1108' class='md-header-anchor '></a>26.3.1 ArrayList</h4><h5><a name='header-n1109' class='md-header-anchor '></a>26.3.1.1 什么是<strong>ArrayList</strong></h5><blockquote><p>(1) ArrayList就是动态数组 动态的增加和减少元素 </p><p>(2) 实现了ICollection和IList接口</p><p>(3)灵活的设置数组的大小</p></blockquote><h5><a name='header-n1114' class='md-header-anchor '></a>26.3.1.2 如何使用ArrayList</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1115" mdtype="fences">ArrayList List = new ArrayList(); 
+for( int i=0;i &lt;10;i++ ) //给数组增加10个Int元素 
+List.Add(i); 
+//..程序做一些处理 
+List.RemoveAt(5);//将第6个元素移除 
+for( int i=0;i &lt;3;i++ ) //再增加3个元素 
+List.Add(i+20); 
+Int32[] values = (Int32[])List.ToArray(typeof(Int32));//返回ArrayList包含的数组
+</pre><h4><a name='header-n1116' class='md-header-anchor '></a>26.3.2 LinkedList的特殊方法</h4><figure><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>void addFirst(Object 0)</td><td>在列表的首部添加元素</td></tr><tr><td>void addLast(Object o)</td><td>在列表的末尾添加元素</td></tr><tr><td>Object getFirst()</td><td>返回列表中的第一个元素</td></tr><tr><td>Object getlast()</td><td>返回列表中的最后一个元素</td></tr><tr><td>Object removeFirst()</td><td>删除并返回列表中的第一个元素</td></tr><tr><td>Object removel ast()</td><td>删除并返回列表中的最后一个元素.</td></tr></tbody></table></figure><h2><a name='header-n1139' class='md-header-anchor '></a>27. Map</h2><h3><a name='header-n1140' class='md-header-anchor '></a>27.1 Map概念</h3><blockquote><p><strong>一个映射接口，即key-value键值对</strong>。</p><p>（1）AbstractMap是个<strong>抽象类</strong>，它实现了Map接口中的大部分API。实现类有6个：TreeMap、HashMap、LinkHashMap、IdentityHashMap、<span>		</span>WeakHashMap、HashTable</p><p>（2）SortedMap 是继承于Map的<strong>接口</strong>。内容是<strong>排序的键值对</strong>，通过比较器(Comparator)</p></blockquote><h3><a name='header-n1145' class='md-header-anchor '></a>27.2 Map常见方法</h3><figure><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>Object put(Object key, Object val)</td><td>以“键-值对”的方式进行存储</td></tr><tr><td>Object get (Object key)</td><td>根据键返回相关联的值，如果不存在指定的键，返回null</td></tr><tr><td>Object remove (Object key)</td><td>删除由指定的键映射的“键值对”</td></tr><tr><td>int size()</td><td>返回元素个数</td></tr><tr><td>Set keySet ()</td><td>返回键的集合</td></tr><tr><td>Collection values ()</td><td>返回值的集合</td></tr><tr><td>boolean containsKey (Object key)</td><td>如果存在由指定的键映射的“键值对”，返回true</td></tr></tbody></table></figure><h2><a name='header-n1171' class='md-header-anchor '></a>28. Iterator 迭代器</h2><h3><a name='header-n1172' class='md-header-anchor '></a>28.1 如何遍历List集合</h3><blockquote><p><strong>通过for循环和get()方法配合实现遍历</strong></p><p><strong>通过迭代器实遍历</strong></p></blockquote><blockquote><p>Cillection 接口的iterate()方法返回一个Iterator,然后通过Iterator接口的两个方法可以实现遍历</p><p>①boolean hasNext():判断是否存在另一个可访问的元素</p><p>②Object next():返回要访问的下一个元素</p></blockquote><h3><a name='header-n1180' class='md-header-anchor '></a>28.2 ArrayList使用迭代器</h3><h4><a name='header-n1181' class='md-header-anchor '></a>28.2.1 Array使用迭代器删除l两种</h4><blockquote><p>在迭代器内部也维护一个字段expectedModCount，同样记录当前集合修改的次数，初始化为集合的modCount值。当我们在调用Iterator进行遍历操作时，如果有其他线程修改list会出现modCount!=expectedModCount的情况，就会报并发修改异常java.util.ConcurrentModificationException。</p></blockquote><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1184" mdtype="fences" style="break-inside: unset;">public static void main(String[] args)
+    {
+   　　　 ArrayList&lt;String&gt; aList=new ArrayList&lt;String&gt;();
+         aList.add("bbc");
+         aList.add("abc");
+         aList.add("ysc");
+         aList.add("saa");
+         System.out.println("移除前："+aList);
+        //使用迭代器
+         Iterator&lt;String&gt; it=aList.iterator();
+         while(it.hasNext())
+         {
+            if("abc".equals(it.next()))
+            {
+              it.remove();     //  aList.remove("abc"); 错误
+            }
+         }
+         System.out.println("移除后："+aList);
+  }
+</pre><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1185" mdtype="fences" style="break-inside: unset;">    public static void fun2() {
+        //迭代器删除
+        // 创建集合 保存 a b c d e
+        ArrayList&lt;String&gt; aList = new ArrayList&lt;&gt;();
+        aList.add("a");
+        aList.add("b");
+        aList.add("b");
+        aList.add("c");
+        aList.add("d");
+        aList.add("e");
+        // 获取迭代器
+        ListIterator&lt;String&gt; listIterator = aList.listIterator();
+        while(listIterator.hasNext()){
+            String next = listIterator.next();
+            if(next.equals("b")){
+                //使用迭代器删除
+                listIterator.remove();
+            }
+        }
+        System.out.println(aList);
+    }123456789101112131415161718192021
+</pre><h4><a name='header-n1186' class='md-header-anchor '></a>28.2.2 快速遍历</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1187" mdtype="fences" style="break-inside: unset;">    //fun1();
+        //fun2();
+        // 创建集合 保存 a b c d e
+        ArrayList&lt;String&gt; aList = new ArrayList&lt;&gt;();
+        aList.add("a");
+        aList.add("b");
+        aList.add("b");
+        aList.add("c");
+        aList.add("d");
+        aList.add("e");
+        // 增强for循环便令 底层是使用迭代器遍历的
+        // 增强for循环 只能 用来 遍历 也叫 快速遍历
+        // 双层遍历的时候 使用的比较多
+        for (String string : aList) {
+            System.out.println(string);
+        }
+    }
+</pre><h3><a name='header-n1188' class='md-header-anchor '></a>28.3 Map遍历的两种方式</h3><h4><a name='header-n1189' class='md-header-anchor '></a>28.3.1 通过键找值</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1190" mdtype="fences">public static void main(String[] args) {
+         Map&lt;String,Integer&gt; map = new HashMap&lt;String,Integer&gt;();
+         map.put("二阳",23);
+         map.put("二峥",24);
+         map.put("二光",25);
+         Set&lt;String&gt; keys=map.keySet();              //把键其中起来,存入到set集合中.
+         for(String key:keys) //遍历键集合，获取每一个键。增强for循环
+                   Integer value=map.get(key);            //让键去找值 get(Object key)
+                   System.out.println(key+"***"+value);
+        }
+}
+</pre><h4><a name='header-n1191' class='md-header-anchor '></a>28.3.2 键值对形式查找</h4><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1192" mdtype="fences">public static void main(String[] args) {
+         Map&lt;String,Integer&gt; map = new HashMap&lt;String,Integer&gt;();
+         map.put("二阳",23);
+         map.put("二峥",24);
+         map.put("二光",25);
+         Set&lt;Map.Entry&lt;String,Integer&gt;&gt; set=map.entrySet(); //获取键值对集合。Set&lt;&gt; entrySet()
+         for(Map.Entry&lt;String,Integer&gt; me:set){  //遍历键值对集合，获取到每一个键值对。增强for，迭代器
+                   String key=me.getKey();   //通过键值对获取键getKey()
+                   Integer value=me.getValue();  //通过键值对获取值getValue()
+                   System.out.println(key+"***"+value);
+         }
+}
+</pre><h2><a name='header-n1193' class='md-header-anchor '></a>29. 泛型集合</h2><h3><a name='header-n1194' class='md-header-anchor '></a>29.1 泛型的集合使用示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1195" mdtype="fences" style="break-inside: unset;">    /*
+     * 创建一个保存人的 集合 存2人
+     * 创建一个保存学生的集合 存2人
+     */
+     public static void fun1() {
+         ArrayList&lt;Person&gt; pList = new ArrayList&lt;&gt;();
+            pList.add(new Person("ygs", 21));
+            pList.add(new Person("sxm", 20));
+
+        ArrayList&lt;Student&gt; sList = new ArrayList&lt;&gt;();
+            sList.add(new Student("hzn", 19));
+            sList.add(new Student("sxd", 21));
+            // 学生的集合 全部添加到 人的集合中
+            // ? extends Person 只能填Person的子类
+            pList.addAll(sList);
+            //sList.addAll(pList); 会报错
+            System.out.println(pList);
+    }
+</pre><h2><a name='header-n1196' class='md-header-anchor '></a>30. Arrays方法中数组转集合</h2><h3><a name='header-n1197' class='md-header-anchor '></a>30.1 代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1198" mdtype="fences" style="break-inside: unset;"> int[] array = {1, 2, 3, 4, 5};
+    // 没有经过自动装箱的数组
+    // 在转化成集合的时候
+    // 相当于 把数组当做集合中的一个元素
+    // 转为了集合
+    List&lt;int[]&gt; asList = Arrays.asList(array);
+    //集合长度为1
+    System.out.println(asList);
+    // 打印出来的是一个地址
+    // 因为传进数组里的元素是基本数据类型
+    // 没有经过自动装箱
+    // 而集合中储存的是 引用数据类型
+    // 所以打印出来的是地址
+
+    //自动装箱为 Integer类型
+    Integer[] array2 = {1, 2 ,3 , 4, 5};
+    List&lt;Integer&gt; asList2 = Array.asList(array2);
+    System.out.println(asList2);
+    //集合 asList2 的长度为 5
+
+    String[] array3 = {"nihao","fanchilema"}
+    //数组转集合
+    List&lt;String&gt; asList3 = Arrays.asList(array3);
+    System.out.println(asList3);
+    // 使用 asLis数组转集合 得到一个集合
+    // 注意: 这个集合不允许 进行添加或删除的操作
+    // 不能进行添加或删除的操作 那么这么转化有什么意义?
+    //虽然不能进行删除和添加 但是可以调用集合其他方法
+
+    //查看是否包含
+    boolean isContains = asList3.contain("nihao");
+    System.out.println(isContains);
+</pre><h2><a name='header-n1199' class='md-header-anchor '></a>31. ArraysList删除相关</h2><h3><a name='header-n1200' class='md-header-anchor '></a>31.1 前言</h3><p>在遍历<code>ArrayList</code>时候进行删除一不小心就会报错，之前遇到直接查询答案用<code>Iterator</code>遍历再删除就可以了，没深究，今天有时间想好好研究下，就准备把List的所有遍历方法都尝试一下，看看哪些会报错，为什么会错，没想到在准备测试数据阶段就载了个跟头</p><h3><a name='header-n1202' class='md-header-anchor '></a>31.2 准备数据阶段</h3><p>看下面的代码，会报错吗？什么错？</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="cpp" contenteditable="false" cid="n1204" mdtype="fences" style="break-inside: unset;">   private List list;
+   @Test
+   public void t10() {
+       for (Integer tar : list) {
+           if (tar &gt;= 2)
+               list.remove(tar);
+       }
+   }
+
+   @Before
+   public void before() {
+       Integer[] arr = {0, 1, 2, 3, 4};
+       list = Arrays.asList(arr);
+   }
+</pre><p>我说一个异常，大家肯定熟悉<code>ConcurrentModificationException</code>，这个异常是遍历时不正确删除导致的，具体哪些不正确我下面再说。问题是上面的代码不是报这个错，而是：</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="css" contenteditable="false" cid="n1206" mdtype="fences">java.lang.UnsupportedOperationException
+at java.util.AbstractList.remove(AbstractList.java:161)
+</pre><h3><a name='header-n1207' class='md-header-anchor '></a>31.3 Arrays.asList的真面目</h3><p>找到我们上面遇到的异常处，什么鬼？<code>AbstractList</code>不想和你说话，并向你抛出了一个异常：</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1209" mdtype="fences">/**
+ * {@inheritDoc}
+ *
+ * &lt;p&gt;This implementation always throws an
+ * {@code UnsupportedOperationException}.
+ *
+ * @throws UnsupportedOperationException {@inheritDoc}
+ * @throws IndexOutOfBoundsException     {@inheritDoc}
+ */
+public E remove(int index) {
+    throw new UnsupportedOperationException();
+}
+</pre><p>确实什么事都没做直接抛，注释也说了这个实现总会抛出异常，不只这一个方法，像<code>add(int index, E element)</code>, <code>remove(int index)</code>也是直接抛的，这是个抽象类嘛，实现的一部分可以共用，另一部分要子类具体实现的，说明<code>Attars.asList</code>返回的<code>List</code>并没有实现这个方法，进到<code>Arrays</code>里面：</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="csharp" contenteditable="false" cid="n1211" mdtype="fences">public static &lt;T&gt; List&lt;T&gt; asList(T... a) {
+    return new ArrayList&lt;&gt;(a);
+}
+</pre><p>哇，是<code>ArrayList</code>，真的是我们熟悉的那个<code>ArraysList</code>吗，不，根本没有这个构造，它的真面目是：</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="php" contenteditable="false" cid="n1213" mdtype="fences">private static class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
+    implements RandomAccess, java.io.Serializable
+{
+    private static final long serialVersionUID = -2764017481108945198L;
+    private final E[] a;
+
+    ArrayList(E[] array) {
+        a = Objects.requireNonNull(array);
+    }
+    
+    。。。。。。
+}
+</pre><p>只是<code>Arrays</code>中的一个静态内部类，<code>Objects.requireNonNull</code>是一个是否为空的判断，不用管它。对于这个<code>ArrayList</code>,没有实现<code>add(E e)</code>, <code>remove(int index)</code>和<code>remove(Object o)</code>等方法，自然是不可修改的。它的用处也不算少见，要想操作数据可以:</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="php" contenteditable="false" cid="n1215" mdtype="fences">    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    list.addAll(Arrays.asList(arr));
+</pre><h3><a name='header-n1216' class='md-header-anchor '></a>31.4 ArrayList遍历删除</h3><h4><a name='header-n1217' class='md-header-anchor '></a>31.4.1 错误1</h4><p>由于<code>foreach</code>语法比<code>fori</code>简单好用，大多数场合我们是能用就用，懒就要有懒的代价啊，要是用<code>fori</code>，你怎么删除都不会报错，但删除后可能并不是你想要的效果哟！详见错误3。回到正题，<code>foreach</code>其实是用<code>Iterator</code>来遍历的,对于集合来说，只要实现了<code>java.lang.Iterable</code>接口，就可以使用<code>foreach</code>。
+ 看下面代码，有什么错误？</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="php" contenteditable="false" cid="n1219" mdtype="fences">    Integer[] arr = {0, 1, 2, 3, 4};
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    list.addAll(Arrays.asList(arr));
+    for (Integer tar : list) {
+        if (tar == 2){
+            list.remove(tar);
+        }
+    }
+</pre><p>答案：报错<code>ConcurrentModificationException</code>
+ 位置在下面代码的倒数第三行，下面是 <code>ArrayList</code>中的迭代器。当我们使用<code>foreach</code>时，就是使用这个迭代器工作的，<code>cursor</code>是游标，指示当前已取出元素的下一个元素，<code>lastRet</code>指示当前已取出元素，<code>expectedModCount</code>是期待的修改次数,<code>modCount</code>是实际修改次数，每次循环都会先调用<code>hasNext()</code>，当游标不等于(即小于)<code>list.size()</code>时说明还有下一个元素，再调用<code>next</code>取出下一个值，<code>next()</code>方法的第一个方法就是<code>checkForComodification()</code>，检查期待的修改次数是否与实际相等，不相等就抛异常，<code>expectedModCount</code>变量范围是这个迭代器，使用<code>list.remove(Object obj)</code>只会使<code>modCount++</code>,<code>expectedModCount</code>的值不变自然就出错了。所以采用<code>Iterator</code>遍历是个明智的选择，它的<code>remove()</code>方法里面<code>ArrayList.this.remove(lastRet)</code>会 让<code>modCount++</code>，但随后又把<code>modCount</code>的值赋给了<code>expectedModCount</code>，继续循环不会出问题。</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1221" mdtype="fences" style="break-inside: unset;">    private class Itr implements Iterator&lt;E&gt; {
+    int cursor;       // index of next element to return
+    int lastRet = -1; // index of last element returned; -1 if no such
+    int expectedModCount = modCount;
+
+    public boolean hasNext() {
+        return cursor != size;
+    }
+
+    @SuppressWarnings("unchecked")
+    public E next() {
+        checkForComodification();
+        int i = cursor;
+        if (i &gt;= size)
+            throw new NoSuchElementException();
+        Object[] elementData = ArrayList.this.elementData;
+        if (i &gt;= elementData.length)
+            throw new ConcurrentModificationException();
+        cursor = i + 1;
+        return (E) elementData[lastRet = i];
+    }
+
+    public void remove() {
+        if (lastRet &lt; 0)
+            throw new IllegalStateException();
+        checkForComodification();
+
+        try {
+            ArrayList.this.remove(lastRet);
+            cursor = lastRet;
+            lastRet = -1;
+            expectedModCount = modCount;
+        } catch (IndexOutOfBoundsException ex) {
+            throw new ConcurrentModificationException();
+        }
+    }
+
+    final void checkForComodification() {
+        if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+    }
+}
+</pre><p>小提问：把上面的遍历<code>tar == 2</code>改成<code>tar == 3</code>还会错吗？</p><p>如果你把上面的解释仔细看了的话，想必已经知道答案了，不会。
+ 解答：当<code>tar == 3</code>时，当前游标<code>cursor</code>是4,<code>size</code>是5,但当删除了<code>tar</code>，<code>size</code>就变成了4,和<code>cursor</code>相等了，到下一次循环，<code>hasNext()</code>判断时为<code>false</code>，所以结束了循环，不给它抛异常的机会。</p><h4><a name='header-n1224' class='md-header-anchor '></a>31.4.2 错误2</h4><p>你以为用了<code>Iterator</code>遍历就高枕无忧了吗？下面代码正确吗？</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="php" contenteditable="false" cid="n1226" mdtype="fences">    Integer[] arr = {0, 1, 2, 3, 4};
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    list.addAll(Arrays.asList(arr));
+    for (Iterator&lt;Integer&gt; iter = list.iterator(); iter.hasNext(); ) {
+        Integer tar = iter.next();
+        if (tar == 2)
+            list.remove(tar);
+    }
+</pre><p>依然微笑的给你抛个异常,虽然用的是<code>Iterator</code>遍历，但是删除方法依然是<code>ArrayList</code>自己的，不是<code>iter.remove()</code>，这个错误和错误1是一样的，属于脱裤子放屁。</p><h4><a name='header-n1228' class='md-header-anchor '></a>31.4.3 错误3</h4><p>这个是特殊的，不报错，但是你处理完成后的数据很可能不是你想要的。
+ 猜猜看剩下什么？</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="cpp" contenteditable="false" cid="n1230" mdtype="fences">    Integer[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    list.addAll(Arrays.asList(arr));
+    for (int i = 0; i &lt; list.size(); i++) {
+        if (list.get(i) &gt; 3)
+            list.remove(i);
+    }
+</pre><p>答案：[0,1,2,3,5,7,9,11]
+ 解析：这一切都是字母<code>i</code>的锅，删除4之前，<code>i = 4</code>，<code>list.get(i) = 4</code>, 删除4之后<code>i</code>不变，但是<code>list.get(i) = 5</code>, 因为后面的元素都向前进了一步，所以每删除一个，这个被删除元素的下一个就幸免于难了。
+ 解决方法：<code>list.remove(i--)</code>， 真是机智又优雅, 开心，其实我最喜欢的遍历方法就是这个。</p><h3><a name='header-n1232' class='md-header-anchor '></a>31.5 总结</h3><p>上面的错误方法都附了解答，有些小伙伴不喜欢看步骤，就要答案，那么总结下<code>ArrayList</code>的正确遍历方法</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="cpp" contenteditable="false" cid="n1234" mdtype="fences" style="break-inside: unset;">Integer[] arr = {0, 1, 2, 3, 4, 5, 6, 7};
+List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+list.addAll(Arrays.asList(arr));
+//第一种
+for (Iterator&lt;Integer&gt; iter = list.iterator(); iter.hasNext(); ) {
+    Integer tar = iter.next();
+    if (tar == 2)
+        iter.remove();
+}
+//第二种
+for (int i = 0; i &lt; list.size(); i++) {
+    if (list.get(i) &gt; 3)
+        list.remove(i--);
+} 
+</pre><p>上面只是针对在遍历时需要多次删除时使用，如果你不删除，或者只删除一次然后<code>break</code>结束循环，你随便用任何你喜欢的方式。
+ 还有<code>remove(int index)</code>和<code>remove(Object o)</code>两个方法，你可以认为是一样的，<code>remove(Object o)</code>无非是内部遍历查找<code>equals</code>为<code>true</code>的元素或者都为<code>null</code>的元素，然后调用<code>fastRemove(int index)</code>删除，干说无力，还是贴上代码</p><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="csharp" contenteditable="false" cid="n1236" mdtype="fences" style="break-inside: unset;">public E remove(int index) {
+    rangeCheck(index);
+
+    modCount++;
+    E oldValue = elementData(index);
+
+    int numMoved = size - index - 1;
+    if (numMoved &gt; 0)
+        System.arraycopy(elementData, index+1, elementData, index,
+                         numMoved);
+    elementData[--size] = null; // clear to let GC do its work
+
+    return oldValue;
+}
+
+private void rangeCheck(int index) {
+    if (index &gt;= size)
+        throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+}
+
+
+public boolean remove(Object o) {
+    if (o == null) {
+        for (int index = 0; index &lt; size; index++)
+            if (elementData[index] == null) {
+                fastRemove(index);
+                return true;
+            }
+    } else {
+        for (int index = 0; index &lt; size; index++)
+            if (o.equals(elementData[index])) {
+                fastRemove(index);
+                return true;
+            }
+    }
+    return false;
+}
+
+private void fastRemove(int index) {
+    modCount++;
+    int numMoved = size - index - 1;
+    if (numMoved &gt; 0)
+        System.arraycopy(elementData, index+1, elementData, index,
+                         numMoved);
+    elementData[--size] = null; // clear to let GC do its work
+}
+</pre><h1><a name='header-n1237' class='md-header-anchor '></a>七、多线程</h1><h2><a name='header-n1238' class='md-header-anchor '></a>32. 什么是进程和线程?</h2><blockquote><ul><li><strong>进程</strong> - 进程是具有一定独立功能的程序（例如QQ.exe），关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。</li><li><strong>线程</strong> - 线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位；线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源(如程序计数器，一组寄存器和栈)，但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</li></ul><p>一个线程可以创建和撤销另一个线程；同一个进程中的多个线程之间可以并发执行。</p><p>相对进程而言，线程是一个更加接近于执行体的概念，它可以与同进程中的其他线程共享数据，但拥有自己的栈空间，拥有独立的执行序列。</p><p>在串行程序基础上引入线程和进程是为了提高程序的并发度，从而提高程序运行效率和响应时间。</p></blockquote><h2><a name='header-n1248' class='md-header-anchor '></a>33. 两种实现多线程方式</h2><h3><a name='header-n1249' class='md-header-anchor '></a>33.1 方式一：实现Runnable接口,实现run方法</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1250" mdtype="fences">//自定义Runnable
+class MyRunnable implements Runnable{
+    @Override
+    public void run () {
+        //需要处理的任务
+    }
+}
+//创建Runnable对象
+Runnable r = new MyRunnable();
+//创建Thread对象
+Thread t = new Thread(r);
+//启动线程
+t.start();
+</pre><h3><a name='header-n1251' class='md-header-anchor '></a>33.2 方式二: 继承Thread类并重写run方法</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1252" mdtype="fences">//复写Thread类的run方法
+Thread thread= new Thread(){
+            @Override
+            public void run () {
+                //需要做的任务
+            }
+        };
+thread.start();
+</pre><h3><a name='header-n1253' class='md-header-anchor '></a>33.3 两种创建线程的方式有什么区别？</h3><blockquote><p>这个主要是因为Java类是单继承的，而接口可以支持多继承，使用Thread类的方式创建新线程时，最大的局限就是不支持多继承。所以具体选择哪种方式来创建线程，就看你是不是需要具体多继承的特性；其他没有本质的区别。</p></blockquote><h2><a name='header-n1256' class='md-header-anchor '></a>34. 常见的Thread方法</h2><figure><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>static Thread currentThread()</td><td>得到当前线程</td></tr><tr><td>final String getName()</td><td>返回线程的名称</td></tr><tr><td>final void setName(String name)</td><td>将线程的名称设置为name指定的名称</td></tr><tr><td>void start()</td><td>调用run()方法启动线程，开始线程的执行</td></tr><tr><td>void run()</td><td>存放线程体代码</td></tr></tbody></table></figure><h2><a name='header-n1276' class='md-header-anchor '></a>35. 线程调度方法</h2><figure><table><thead><tr><th style='text-align:left;' >方法</th><th>功能</th></tr></thead><tbody><tr><td style='text-align:left;' >setPriority(int newPriority)</td><td>更改线程的优先级</td></tr><tr><td style='text-align:left;' >static void sleep(long millis)</td><td>在指定的毫秒数内让当前正在执行的线程休眠,<br />但是不释放锁，时间到后进入就绪状态等待调度</td></tr><tr><td style='text-align:left;' >void join()</td><td>把指定的线程加入到当前线程，可以将两个交替执行的<br />线程合并为顺序执行的线程比如在线程 B 中调用了线程 A 的 join() 方法，<br />直到线程 A 执行完毕后才会继续执行线程 B,(即等待该线程终止)</td></tr><tr><td style='text-align:left;' >void yield()</td><td>暂停当前正在执行的线程对象，并执行其他线程。<br />理论上，yield意味着放手，放弃，投降。</td></tr><tr><td style='text-align:left;' >void interrupt()</td><td>中断线程</td></tr><tr><td style='text-align:left;' >boolean isAlive()</td><td>测试线程是否处于活动状态</td></tr><tr><td style='text-align:left;' >void stop()</td><td>//停止该线程。这一方法已过时</td></tr></tbody></table></figure><h2><a name='header-n1302' class='md-header-anchor '></a>36. 线程的状态</h2><blockquote><p>新生&gt;&gt;可运行&gt;&gt;阻塞&gt;&gt;死亡</p></blockquote><h2><a name='header-n1305' class='md-header-anchor '></a>37. join()代码示例</h2><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1306" mdtype="fences" style="break-inside: unset;">class ThreadDemo extends Thread {
+     @Override
+     public void run() {
+            for (int x = 0; x &lt; 100; x++) {
+                System.out.println(getName() + ":" + x);
+            }
+        }
+    }
+public class test {
+    public static void main(String[] args) {
+        ThreadDemo ty1 = new ThreadDemo();
+        ThreadDemo ty2 = new ThreadDemo();
+        ThreadDemo ty3 = new ThreadDemo();
+        ty1.setName("A");
+        ty2.setName("B");
+        ty3.setName("C");
+       ty2.start();
+        ty1.start();
+        try {
+            ty1.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ty3.start();
+    }}
+运行程序可以发现，名字A的线程加塞进B(B先运行)穿插运行运行完之后才开始运行C
+</pre><h2><a name='header-n1307' class='md-header-anchor '></a>38. sleep()方法和yield()方法区别</h2><blockquote><p>sleep()方法和yield()方法都是Thread类的静态方法（注意两个方法都是<strong>作用于当前线程</strong>），都会使当前处于运行状态的线程放弃CPU，把运行机会让给别的线程。</p></blockquote><p>两者的区别在于：</p><blockquote><p>1.sleep()方法会给其他线程运行的机会，不考虑其他线程的优先级，因此会给较低优先级线程一个运行的机会；yield()方法只会给相同优先级或者更高优先级的线程一个运行的机会。</p><p>2.当线程执行了sleep(long millis)方法，将转到阻塞状态，参数millis指定睡眠时间；当线程执行了yield()方法，将转到就绪状态。</p><p>3.sleep()方法声明抛出InterruptedException异常，而yield()方法没有声明抛出任何异常。</p><p>4.sleep()方法比yield()方法具有更好的可移植性，不能依靠yield()方法来提高程序的并发性能。对于大多数程序员来说，yield()方法的唯一用途是在测试期间人为地提高程序的并发性能，以帮助发现一些隐藏的错误。</p></blockquote><h2><a name='header-n1316' class='md-header-anchor '></a>39. 线程同步</h2><h3><a name='header-n1317' class='md-header-anchor '></a>39.1 线程同步概念</h3><blockquote><p>(1)多线程之间调用同一对象时，为了运行的安全和准确性，需要对该对象进行同步，确保每一个线程用到的时候该对象的结果都是正确的，该对象的状<span>		</span>态都是合理的</p><p>(2)当两个或者以上线程访问同一资源时,需要某种方式来确保资源在某一时刻只被一个线程使用</p></blockquote><h3><a name='header-n1321' class='md-header-anchor '></a>39.2 同步代码块与同步方法</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1322" mdtype="fences">//同步代码块
+synchronized（Object object）{
+...
+}
+//同步方法
+public synchronized void test(){
+...
+}
+</pre><h3><a name='header-n1323' class='md-header-anchor '></a>39.3 使用同步方法代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1324" mdtype="fences" style="break-inside: unset;">public class ThreadTest {
+    public static void main(String[] args) {
+        SellRunnable sellRunnable = new SellRunnable();
+        Thread thread1 = new Thread(sellRunnable, "1");
+        Thread thread2 = new Thread(sellRunnable, "2");
+        Thread thread3 = new Thread(sellRunnable, "3");
+        thread2.start();
+        thread1.start();
+        thread3.start();
+    }
+
+}
+
+class SellRunnable implements Runnable {
+    //有十张票
+    int index = 10;
+
+    public void sell() {
+        if (index &gt;= 1) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            index--;
+            System.out.println("售货窗口：" + Thread.currentThread().getName() + "  卖出了一张票,剩余：" + index);
+        } else {
+            System.out.println("售货窗口：" + Thread.currentThread().getName() + " 买票时没票了");
+        }
+
+    }
+
+    @Override
+    public void run() {
+
+        while (index &gt; 0) {
+            System.out.println("售货窗口：" + Thread.currentThread().getName() + " 开始买票");
+            sell();
+        }
+    }
+}
+
+//执行结果：
+
+售货窗口：1 开始买票
+售货窗口：2 开始买票
+售货窗口：3 开始买票
+售货窗口：2  卖出了一张票,剩余：9
+售货窗口：2 开始买票
+售货窗口：1  卖出了一张票,剩余：9
+售货窗口：1 开始买票
+售货窗口：3  卖出了一张票,剩余：8
+售货窗口：3 开始买票
+售货窗口：1  卖出了一张票,剩余：6
+售货窗口：1 开始买票
+售货窗口：2  卖出了一张票,剩余：6
+售货窗口：2 开始买票
+售货窗口：3  卖出了一张票,剩余：5
+售货窗口：3 开始买票
+售货窗口：1  卖出了一张票,剩余：4
+售货窗口：1 开始买票
+售货窗口：2  卖出了一张票,剩余：3
+售货窗口：3  卖出了一张票,剩余：2
+售货窗口：3 开始买票
+售货窗口：2 开始买票
+售货窗口：3  卖出了一张票,剩余：1
+售货窗口：2  卖出了一张票,剩余：0
+售货窗口：1  卖出了一张票,剩余：1
+
+Process finished with exit code 0  //可以看到，票数减少是错误的
+
+//sell方法添加synchronized修饰符后 执行结果：
+public synchronized void sell() {
+        if (index &gt;= 1) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            index--;
+            System.out.println("售货窗口：" + Thread.currentThread().getName() + "  卖出了一张票,剩余：" + index);
+        } else {
+            System.out.println("售货窗口：" + Thread.currentThread().getName() + " 买票时没票了");
+        }
+
+    }
+
+售货窗口：2 开始买票
+售货窗口：3 开始买票
+售货窗口：1 开始买票
+售货窗口：2  卖出了一张票,剩余：9
+售货窗口：2 开始买票
+售货窗口：1  卖出了一张票,剩余：8
+售货窗口：1 开始买票
+售货窗口：3  卖出了一张票,剩余：7
+售货窗口：3 开始买票
+售货窗口：1  卖出了一张票,剩余：6
+售货窗口：1 开始买票
+售货窗口：2  卖出了一张票,剩余：5
+售货窗口：2 开始买票
+售货窗口：1  卖出了一张票,剩余：4
+售货窗口：1 开始买票
+售货窗口：1  卖出了一张票,剩余：3
+售货窗口：1 开始买票
+售货窗口：3  卖出了一张票,剩余：2
+售货窗口：3 开始买票
+售货窗口：1  卖出了一张票,剩余：1
+售货窗口：1 开始买票
+售货窗口：1  卖出了一张票,剩余：0
+售货窗口：2 买票时没票了
+售货窗口：3 买票时没票了
+
+Process finished with exit code 0  // 可以看到，票数是正常减少的
+</pre><h2><a name='header-n1325' class='md-header-anchor '></a>40. 线程通信</h2><h3><a name='header-n1326' class='md-header-anchor '></a>40.1 三个方法解决线程之间通信问题</h3><figure><table><thead><tr><th>方法名</th><th>作用</th></tr></thead><tbody><tr><td>final void wait()</td><td>表示线程一直等待，直到其它线程通知</td></tr><tr><td>void wait(long timeout)</td><td>线程等待指定毫秒参数的时间</td></tr><tr><td>final void wait(long timeout,int nanos)</td><td>线程等待指定毫秒、微妙的时间</td></tr><tr><td>final void notify()</td><td>唤醒-个处于等待状态的线程</td></tr><tr><td>final void notifyAll()</td><td>唤醒同-个对象上所有调用wait()方法的线程，<br />优先级别高的线程优先运行</td></tr></tbody></table></figure><h3><a name='header-n1346' class='md-header-anchor '></a>40.2 简单代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1347" mdtype="fences" style="break-inside: unset;">if(!isbalance){
+		System.out.println(Thread.currentThread().getName()+"取钱但是没钱了 ,打电话让张三充钱");
+		notify();
+		try {
+			wait();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}}
+    
+		if(isbalance){
+			System.out.println("\t\t\t\t"+Thread.currentThread().getName()+"存钱了,打电话让他老婆花钱");
+			notify();
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+</pre><p>&nbsp;</p><h2><a name='header-n1350' class='md-header-anchor '></a>41. Timer定时器</h2><h3><a name='header-n1351' class='md-header-anchor '></a>41.1 只执行一次代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1352" mdtype="fences" style="break-inside: unset;">   Timer timer = new Timer();
+   //延迟1000ms执行程序
+    timer.schedule(new TimerTask() {
+        @Override
+        public void run() {
+            System.out.println("IMP 当前时间" + this.scheduledExecutionTime());
+        }
+    }, 1000);
+    //延迟10000ms执行程序
+    timer.schedule(new TimerTask() {
+        @Override
+        public void run() {
+            System.out.println("IMP 当前时间" + this.scheduledExecutionTime());
+        }
+    }, new Date(System.currentTimeMillis() + 10000));
+</pre><h3><a name='header-n1353' class='md-header-anchor '></a>41.2 循环执行代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1354" mdtype="fences" style="break-inside: unset;">    Timer timer = new Timer();
+    //前一次执行程序结束后 2000ms 后开始执行下一次程序
+    timer.schedule(new TimerTask() {
+        @Override
+        public void run() {
+            System.out.println("IMP 当前时间" + this.scheduledExecutionTime());
+        }
+    }, 0,2000);
+
+    //前一次程序执行开始 后 2000ms后开始执行下一次程序
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            System.out.println("IMP 当前时间" + this.scheduledExecutionTime());
+        }
+    },0,2000);
+</pre><h1><a name='header-n1355' class='md-header-anchor '></a>八、IO流</h1><h2><a name='header-n1356' class='md-header-anchor '></a>42. IO流的分类与概念</h2><h3><a name='header-n1357' class='md-header-anchor '></a>42.1 io流概念</h3><blockquote><p>数据传输是需要通道的，而IO流就是数据传输的通道。</p><p>IO流可以形象的比喻为运送货物的传输带</p><p>在Java中，文件的输入和输出是通过流（Stream）来实现的</p></blockquote><h3><a name='header-n1362' class='md-header-anchor '></a>42.2 分类依据</h3><blockquote><p>①根据操作的数据类型的不同可以分为 ：字节流与字符流。</p><p>②根据数据的流向分为：输入流与输出流，程序（内存）作为参照物，程序从外部读取称为输入（Input），程序向外部写数据成为输出（Output）。</p><p>③按流的功能不同分为：节点流和处理流</p><p><span>	</span>（1）程序用于直接操作目标设备所对应的类叫节点流。 如:File(文件)
+​<span>	</span>   （2）程序通过一个间接流类去调用节点流类，以达到更加灵活方便地读写各种类型的数据，这个间接流类就是处理流。如:Buffering缓冲流</p></blockquote><h3><a name='header-n1368' class='md-header-anchor '></a>42.3 分类示例图</h3><p><img src='https://img-blog.csdnimg.cn/524092fc5c4841e3851b66542bb4a17e.png' alt='在这里插入图片描述' referrerPolicy='no-referrer' /></p><h2><a name='header-n1370' class='md-header-anchor '></a>43. 文件类方法总结</h2><h3><a name='header-n1371' class='md-header-anchor '></a>43.1 文件类概念</h3><blockquote><p>Java读写文件的IO流分两大类，字节流和字符流，基类分别是</p><p>字符：Reader和Writer</p><p>字节：InputStream和OutPutStream</p></blockquote><h3><a name='header-n1376' class='md-header-anchor '></a>43.2 创建File类对象的构造方法</h3><figure><table><thead><tr><th>构造方法</th><th>功能</th></tr></thead><tbody><tr><td>public File(String path):</td><td>使用指定路径构造一个对象。</td></tr><tr><td>public File(String path, String name):</td><td>使用指定路径和字符串构造一个对象。</td></tr><tr><td>public File(File dir, String name):</td><td>使用指定文件目录和字符串构造一个对象。</td></tr></tbody></table></figure><h3><a name='header-n1390' class='md-header-anchor '></a>43.3 File类的常见方法</h3><figure><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>getName()</td><td>获取对象所代表的文件名</td></tr><tr><td>getParent()</td><td>获取文件对象的路径的父类信息</td></tr><tr><td>getPath()</td><td>获取对象所代表文件的路径名</td></tr><tr><td>canRead()</td><td>测试能否从指定的文件中读数据</td></tr><tr><td>canWrite()</td><td>测试能否对指定的文件写入数据</td></tr><tr><td><code>exists()</code></td><td>测试文件是否存在</td></tr><tr><td><code>length()</code></td><td>获取文件对象所代表的文件长度</td></tr><tr><td>list()</td><td>获取文件对象指定的目录中文件列表</td></tr><tr><td>getAbsolutePath()</td><td>获取文件的绝对路径</td></tr><tr><td>getCanonicalPath()</td><td>获取文件对象路径名的标准格式</td></tr><tr><td>isAbsolute()</td><td>测试此文件对象代表的文件是否是绝对路径</td></tr><tr><td>isDirectory()</td><td>测试此文件对象代表的文件是否是一个目录</td></tr><tr><td>isFile()</td><td>测试此对象所代表的是否是一个文件</td></tr><tr><td><code>delete()</code></td><td>删除此对象指定的文件</td></tr><tr><td><code>mkdir()</code></td><td>创建一个录，其路径名由此文件对象指定</td></tr><tr><td><code>mkdirs()</code></td><td>创建一个目录，其路径名由此文件对象指定并包括必要的父目录</td></tr></tbody></table></figure><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1443" mdtype="fences">//dirPath  :文件夹磁盘路径 
+
+private static void isChartPathExist(String dirPath) {
+
+        File file = new File(dirPath);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+    }
+</pre><h2><a name='header-n1444' class='md-header-anchor '></a>44. 字节流</h2><h3><a name='header-n1445' class='md-header-anchor '></a>44.1 字节流基流</h3><h4><a name='header-n1446' class='md-header-anchor '></a>44.1.1 InputStream</h4><blockquote><p>字节输入流基类，抽象类是表示字节输入流的所有类的超类。</p></blockquote><figure><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>abstract int read()</td><td>// 从输入流中读取数据的下一个字节</td></tr><tr><td>int read(byte[] b)</td><td>// 从输入流中读取一定数量的字节，并将其存储在缓冲区数组 b中</td></tr><tr><td>int read(byte[] b, int off, int len)</td><td>// 将输入流中最多 len 个数据字节读入 byte 数组</td></tr><tr><td>long skip(long n)</td><td>// 跳过和丢弃此输入流中数据的 n个字节</td></tr><tr><td>void close()</td><td>// 关闭此输入流并释放与该流关联的所有系统资源</td></tr></tbody></table></figure><h4><a name='header-n1468' class='md-header-anchor '></a>44.1.2 OutputStream</h4><blockquote><p>OutputStream：字节输出流基类，抽象类是表示输出字节流的所有类的超类。</p></blockquote><figure><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>void write(byte[] b)</td><td>// 将 b.length 个字节从指定的 byte 数组写入此输出流</td></tr><tr><td>void write(byte[] b, int off, int len)</td><td>// 将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流</td></tr><tr><td>abstract void write(int b)</td><td>// 将指定的字节写入此输出流</td></tr><tr><td>void close()</td><td>// 关闭此输出流并释放与此流有关的所有系统资源</td></tr><tr><td>void flush()</td><td>// 刷新此输出流并强制写出所有缓冲的输出字节</td></tr></tbody></table></figure><h3><a name='header-n1490' class='md-header-anchor '></a>44.2 字节流文件操作流</h3><h4><a name='header-n1491' class='md-header-anchor '></a>44.2.1 字节文件输入流 (FileInputStream)</h4><blockquote><p>FileInputStream：字节文件输入流，从文件系统中的某个文件中获得输入字节，用于读取诸如图像数据之类的原始字节流。</p></blockquote><h5><a name='header-n1494' class='md-header-anchor '></a>44.2.1.1 构造函数</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>FileInputStream(File file)</td><td>// 通过打开一个到实际文件的连接来创建一个FileInputStream，该文件通过文件系统中的File对象file指定</td></tr><tr><td>FileInputStream(String name)</td><td>// 通过打开一个到实际文件的连接来创建一个FileInputStream，该文件通过文件系统中的路径name指定</td></tr></tbody></table></figure><h5><a name='header-n1505' class='md-header-anchor '></a>44.2.1.2 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1506" mdtype="fences" style="break-inside: unset;">常用方法：覆盖和重写了父类的的常用方法。
+        //构造方法1
+        InputStream inputStream = new FileInputStream(new File("f://hello//test.txt"));
+        int i = 0;
+   //一次读取一个字节  --&gt;int read() 从输入流中读取数据的下一个字节
+        while ((i = inputStream.read()) != -1) {
+            //为什么会输出65 66 67 68？因为字符在底层存储的时候就是存储的数值。即字符对应的ASCII码。
+            System.out.print((char) i + " ");// A B C D
+        } //关闭IO流
+        inputStream.close();
+---------------------------------------------------------------------------------------------------------
+        // 读取f盘下该文件f://hell/test.txt
+        //构造方法2
+        InputStream inputStream2 = new FileInputStream("f://hello/test.txt");
+        // 字节数组
+        byte[] b = new byte[2];
+        int i2 = 0;
+ //  一次读取一个字节数组 --&gt;int read(byte[] b) 从输入流中读取一定数量的字节，并将其存储在缓冲区数组 b中
+        while ((i2 = inputStream2.read(b)) != -1) {       
+            System.out.print(new String(b, 0, i2) + " ");// AB CD
+        } //关闭IO流
+        inputStream2.close();
+</pre><h4><a name='header-n1507' class='md-header-anchor '></a>44.2.2 字节文件输出流  (FileOutputStream)</h4><blockquote><p>FileOutputStream：字节文件输出流是用于将数据写入到File，从程序中写入到其他位置。</p></blockquote><h5><a name='header-n1510' class='md-header-anchor '></a>44.2.2.1 构造函数</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>FileOutputStream(File file)</td><td>// 创建一个向指定File对象表示的文件中写入数据的文件输出流</td></tr><tr><td>FileOutputStream(File file, boolean append)</td><td>// 创建一个向指定File对象表示的文件中写入数据的文件输出流</td></tr><tr><td>FileOutputStream(String name)</td><td>// 创建一个向具有指定名称的文件中写入数据的输出文件流</td></tr><tr><td>FileOutputStream(String name, boolean append)</td><td>// 创建一个向具有指定name的文件中写入数据的输出文件流</td></tr></tbody></table></figure><h5><a name='header-n1527' class='md-header-anchor '></a>442.2.2. 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1528" mdtype="fences" style="break-inside: unset;">     OutputStream outputStream = new FileOutputStream(new File("test.txt"));
+        // 写出数据
+        outputStream.write("ABCD".getBytes());
+        // 关闭IO流
+        outputStream.close();
+        // 内容追加写入
+        OutputStream outputStream2 = new FileOutputStream("test.txt", true);
+        // 输出换行符
+        outputStream2.write("\r\n".getBytes());
+        // 输出追加内容
+        outputStream2.write("hello".getBytes());
+        // 关闭IO流
+        outputStream2.close();
+
+</pre><blockquote><p>注：输出的目的地文件不存在，则会自动创建，不指定盘符的话，默认创建在项目目录下;输出换行符时一定要写\r\n不能只写\n,因为不同文本编辑器对换行符的识别存在差异性。</p></blockquote><h3><a name='header-n1531' class='md-header-anchor '></a>44.3 字节缓冲流（高效流）</h3><h4><a name='header-n1532' class='md-header-anchor '></a>44.3.1 字节缓冲输入流（BufferedInputStream）</h4><blockquote><p>BufferedInputStream：字节缓冲输入流，提高了读取效率。</p></blockquote><h5><a name='header-n1535' class='md-header-anchor '></a>44.3.1.1 构造方法</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>BufferedInputStream(InputStream in)</td><td>// 创建一个 BufferedInputStream并保存其参数，即输入流in，以便将来使用。</td></tr><tr><td>BufferedInputStream(InputStream in, int size)</td><td>// 创建具有指定缓冲区大小的 BufferedInputStream并保存其参数，即输入流in以便将来使用</td></tr></tbody></table></figure><h5><a name='header-n1546' class='md-header-anchor '></a>44.3.1.2 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1547" mdtype="fences">  InputStream in = new FileInputStream("test.txt");
+        // 字节缓存流
+        BufferedInputStream bis = new BufferedInputStream(in);
+        byte[] bs = new byte[20];
+        int len = 0;
+        while ((len = bis.read(bs)) != -1) {
+            System.out.print(new String(bs, 0, len));
+        }
+        // 关闭流
+        bis.close();
+</pre><h4><a name='header-n1548' class='md-header-anchor '></a>44.3.2 字节缓冲输出流(BufferedOutputStream)</h4><blockquote><p>BufferedOutputStream：字节缓冲输出流，提高了写出效率。</p></blockquote><h5><a name='header-n1551' class='md-header-anchor '></a>44.3.2.1 构造方法</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>BufferedOutputStream(OutputStream out)</td><td>// 创建一个新的缓冲输出流，以将数据写入指定的底层输出流</td></tr><tr><td>BufferedOutputStream(OutputStream out, int size)</td><td>// 创建一个新的缓冲输出流，以将具有指定缓冲区大小的数据写入指定的底层输出流</td></tr></tbody></table></figure><h5><a name='header-n1562' class='md-header-anchor '></a>44.3.2.2 常用方法</h5><figure><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>void write(byte[] b, int off, int len)</td><td>// 将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此缓冲的输出流</td></tr><tr><td>void write(int b)</td><td>// 将指定的字节写入此缓冲的输出流</td></tr><tr><td>void flush()</td><td>// 刷新此缓冲的输出流</td></tr></tbody></table></figure><h5><a name='header-n1576' class='md-header-anchor '></a>44.3.2.3 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1577" mdtype="fences"> BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("test.txt", true));
+        // 输出换行符
+        bos.write("\r\n".getBytes());
+        // 输出内容
+        bos.write("Hello Android".getBytes());
+        // 刷新此缓冲的输出流
+        bos.flush();
+        // 关闭流
+        bos.close();
+</pre><blockquote><p>String的getBytes()方法是得到一个操作系统默认的编码格式的字节数组</p></blockquote><h2><a name='header-n1580' class='md-header-anchor '></a>45. 字符流</h2><h3><a name='header-n1581' class='md-header-anchor '></a>45.1 字符流基类</h3><h4><a name='header-n1582' class='md-header-anchor '></a>45.1.1 读取字符流(Reader)</h4><blockquote><p>Reader:读取字符流的抽象类.</p></blockquote><h5><a name='header-n1585' class='md-header-anchor '></a>45.1.1.1 常用方法</h5><figure><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>int read()</td><td>// 读取单个字符</td></tr><tr><td>int read(char[] cbuf)</td><td>// 将字符读入数组</td></tr><tr><td>abstract int read(char[] cbuf, int off, int len)</td><td>// 将字符读入数组的某一部分</td></tr><tr><td>long skip(long n)</td><td>// 跳过字符</td></tr><tr><td>abstract void close()</td><td>// 关闭该流并释放与之关联的所有资源</td></tr></tbody></table></figure><h5><a name='header-n1605' class='md-header-anchor '></a>45.1.1.2 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1606" mdtype="fences" style="break-inside: unset;">/**
+ * 字符流：读
+ */
+public class Demo01 {
+	public static void main(String[] args) throws Exception {
+		File file=new File("D://a.txt");//创建文件
+		Reader reader=new FileReader(file);//创建读字符对象
+		char c[]=new char[1024];//创建字符对象
+		int len=reader.read(c);//读取文件字符长度
+		reader.close();//关闭字符流对象
+		System.out.println("读取的内容是："+new String(new String(c,0,len)));
+	}
+-----------------------------------------------------------------------------
+
+public class Demo2 {
+	public static void main(String[] args) throws Exception {
+		File file=new File("D://a.txt");//创建文件对象
+		Reader reader=new FileReader(file);//创建字符流对对象
+		char c[]=new char[1024];//创建字符流
+		int len=0;
+		int temp=0;
+		while((temp=reader.read())!=-1){//文件还在读
+			c[len++]=(char) temp;
+		}
+		reader.close();
+		System.out.println("读取的内容是："+new String(new String(c,0,len)));
+	}
+
+</pre><h4><a name='header-n1607' class='md-header-anchor '></a>45.1.2 写入字符流（Writer）</h4><blockquote><p>Writer:写入字符流的抽象类</p></blockquote><h5><a name='header-n1610' class='md-header-anchor '></a>45.1.2.1 常用方法</h5><figure><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>void write(char[] cbuf)</td><td>// 写入字符数组</td></tr><tr><td>abstract void write(char[] cbuf, int off, int len)</td><td>// 写入字符数组的某一部分</td></tr><tr><td>void write(int c)<br />void write(String str)<br />void write(String str, int off, int len)</td><td>// 写入单个字符<br />// 写入字符串<br />// 写入字符串的某一部分</td></tr><tr><td>Writer append(char c)<br/> Writer append(CharSequence csq)<br />Writer append(CharSequence csq, int start, int end)</td><td>// 将指定字符添加到此 writer<br />// 将指定字符序列添加到此 writer<br />// 将指定字符序列的子序列添加到此 writer.Appendable</td></tr><tr><td>abstract void close()</td><td>// 关闭此流，但要先刷新它</td></tr><tr><td>abstract void flush()</td><td>// 刷新该流的缓冲</td></tr></tbody></table></figure><h5><a name='header-n1633' class='md-header-anchor '></a>45.1.2.2 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1634" mdtype="fences" style="break-inside: unset;">/**
+ * 字符流：输出流
+ */
+public class Demo3 { 
+	public static void main(String[] args) throws Exception {
+		File file=new File("D://测试文件.txt");//创建文件对象
+		Writer out=new FileWriter(file);//创建字符流对象
+		out.write("爱我中华");//写入
+		out.close();//关闭
+	}
+------------------------------------------------------
+public class Demo4 {
+	public static void main(String[] args) throws Exception {
+		File file=new File("D://测试文件1.txt");//创建文件对象
+		Writer out=new FileWriter(file,true);//创建字符写入对象
+		out.write("爱我中华");
+		out.close();
+	}
+</pre><h3><a name='header-n1635' class='md-header-anchor '></a>45.2 字符转换流</h3><h4><a name='header-n1636' class='md-header-anchor '></a>45.2.1 字节流转字符流</h4><blockquote><p>InputStreamReader：字节流转字符流，它使用的字符集可以由名称指定或显式给定，否则将接受平台默认的字符集。</p><p>OutputStreamWriter：字节流转字符流。</p></blockquote><h5><a name='header-n1640' class='md-header-anchor '></a>45.2.1.1 InputStreamReader构造函数</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>InputStreamReader(InputStream in)</td><td>// 创建一个使用默认字符集的 InputStreamReader</td></tr><tr><td>InputStreamReader(InputStream in, Charset cs)</td><td>// 创建使用给定字符集的 InputStreamReader</td></tr><tr><td>InputStreamReader(InputStream in, CharsetDecoder dec)</td><td>// 创建使用给定字符集解码器的 InputStreamReader</td></tr><tr><td>InputStreamReader(InputStream in, String charsetName)</td><td>// 创建使用指定字符集的 InputStreamReader</td></tr></tbody></table></figure><h5><a name='header-n1657' class='md-header-anchor '></a>45.2.1.2 OutputStreamWriter构造函数</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>OutputStreamWriter(OutputStream out)</td><td>// 创建使用默认字符编码的 OutputStreamWriter</td></tr><tr><td>OutputStreamWriter(OutputStream out, Charset cs)</td><td>// 创建使用给定字符集的 OutputStreamWriter</td></tr><tr><td>OutputStreamWriter(OutputStream out, CharsetEncoder enc)</td><td>// 创建使用给定字符集编码器的 OutputStreamWriter</td></tr><tr><td>OutputStreamWriter(OutputStream out, String charsetName)</td><td>// 创建使用指定字符集的 OutputStreamWriter</td></tr></tbody></table></figure><h5><a name='header-n1674' class='md-header-anchor '></a>45.2.1.3 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1675" mdtype="fences" style="break-inside: unset;">   //使用默认编码        
+        InputStreamReader reader = new InputStreamReader(new FileInputStream("test.txt"));
+        int len;
+        while ((len = reader.read()) != -1) {
+            System.out.print((char) len);
+        }
+        reader.close();
+------------------------------------------------------------------------------------------------
+         //指定编码 
+        InputStreamReader reader = new InputStreamReader(new FileInputStream("test.txt"),"utf-8");
+        int len;
+        while ((len = reader.read()) != -1) {
+            System.out.print((char) len);//????????Android
+        }
+        reader.close();
+</pre><h3><a name='header-n1676' class='md-header-anchor '></a>45.3 字符缓冲流（高效流）</h3><h4><a name='header-n1677' class='md-header-anchor '></a>45.3.1 字符缓冲流</h4><blockquote><p>BufferedReader：字符缓冲流，从字符输入流中读取文本，缓冲各个字符，从而实现字符、数组和行的高效读取。</p><p>BufferedWriter：字符缓冲流，将文本写入字符输出流，缓冲各个字符，从而提供单个字符、数组和字符串的高效写入。</p></blockquote><h5><a name='header-n1681' class='md-header-anchor '></a>45.3.1.1 构造方法</h5><figure><table><thead><tr><th>构造方法</th><th>解释</th></tr></thead><tbody><tr><td>BufferedReader(Reader in)</td><td>// 创建一个使用默认大小输入缓冲区的缓冲字符输入流</td></tr><tr><td>BufferedReader(Reader in, int sz)</td><td>// 创建一个使用指定大小输入缓冲区的缓冲字符输入流</td></tr><tr><td>BufferedWriter(Writer out)</td><td>// 创建一个使用默认大小输出缓冲区的缓冲字符输出流</td></tr><tr><td>BufferedWriter(Writer out, int sz)</td><td>// 创建一个使用给定大小输出缓冲区的新缓冲字符输出流</td></tr></tbody></table></figure><h5><a name='header-n1698' class='md-header-anchor '></a>45.3.1.2 特有方法</h5><figure><table><thead><tr><th>特有方法</th><th>功能</th></tr></thead><tbody><tr><td>void newLine()</td><td>写入一个行分隔符</td></tr><tr><td>String readLine()</td><td>读取一个文本行</td></tr></tbody></table></figure><h5><a name='header-n1709' class='md-header-anchor '></a>45.3.1.3 代码示例</h5><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1710" mdtype="fences">      //生成字符缓冲流对象
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("test.txt")));
+        String str;
+        //一次性读取一行
+        while ((str = reader.readLine()) != null) {
+            System.out.println(str);// 爱生活，爱Android
+        }
+        //关闭流
+        reader.close();
+</pre><h2><a name='header-n1711' class='md-header-anchor '></a>46. 对象流</h2><h3><a name='header-n1712' class='md-header-anchor '></a>46.1 什么是对象流？</h3><blockquote><p>该流可以将一个对象写出，或者读取一个对象到程序中，也就是执行了序列化和反序列化操作。</p><p>前提：需要被序列化和反序列化的类必须实现<strong>Serializable</strong> 接口。</p></blockquote><h3><a name='header-n1716' class='md-header-anchor '></a>46.2 代码示例</h3><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1717" mdtype="fences" style="break-inside: unset;">import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Work2 implements Serializable {
+	private static final long serialVersionUID = 1L;
+	String name;
+	int age;
+	public Work2(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	public String toString() {
+		return "Work2 [name=" + name + ", age=" + age + "]";
+	}
+}
+-------------------------------------------------------------------------------
+class Ois{
+	public static void main(String[] args) {
+		try(
+			FileInputStream fis = new FileInputStream("文件名或文件");
+			ObjectInputStream ois = new ObjectInputStream(fis)
+			) {
+			//Object ob = ois.readObject();
+			Work2 work = (Work2)ois.readObject();
+			System.out.println(work);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+-----------------------------------------------------------------------------
+class Oos{
+	public static void main(String[] args) {
+		Work2 work = new Work2("小明", 12);
+		try(
+			FileOutputStream fos = new FileOutputStream("文件名或文件");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+				) {
+			oos.writeObject(work);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+</pre><pre spellcheck="false" class="md-fences mock-cm md-end-block" lang="java" contenteditable="false" cid="n1718" mdtype="fences" style="break-inside: unset;">/**
+* @Title: FileRW.java
+* @Package com.file
+* @Description: 文件、文件夹的创建、写入练习。读写是使用对象流实现。
+* @version V1.0
+*/
+package com.file;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.LinkedList;
+
+
+public class FileRW {
+    private String dirPath;
+    private String filename;
+
+    public static void main(String[] args) {
+        String path = "C:\\晓声";
+        String fileName = "test.txt";
+        FileRW fileRW = new FileRW(path, fileName);
+        LinkedList&lt;TestMessage&gt; msgOut = new LinkedList&lt;TestMessage&gt;();
+        LinkedList&lt;TestMessage&gt; msgIn = null;
+
+        msgOut.add(new TestMessage("柯南", "偶像"));
+        msgOut.add(new TestMessage("卡卡西", "好样的"));
+        msgOut.add(new TestMessage("Android", "Android"));
+        msgOut.add(new TestMessage("哈哈", "测试下喔"));
+        fileRW.writeObject(path, fileName, msgOut);
+
+        msgIn = fileRW.readObject(path,fileName);
+
+        for(TestMessage temp:msgIn)    {
+            System.out.println(temp.getName() + temp.getData());
+        }
+
+    }
+
+    public FileRW(String dirPath, String filename) {
+        this.dirPath = dirPath;
+        this.filename = filename;
+        if (creatDir()) {
+            creatFile();
+        }
+    }
+
+
+    private boolean creatDir() {
+        if (null != dirPath) {
+            File path = new File(dirPath);
+            if (path.exists()) {
+                return true;
+            }
+            if (true == path.mkdirs() ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void creatFile() {
+        if (null != filename) {
+            File file = new File(dirPath, filename);
+            if (false == file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    /**
+    * @Title: writeObject
+    * @Description: Write a object to a file.
+    * @param path the directory of the target file
+    * @param filename the name of the target file
+    * @param msg the type of the object
+    * @return void
+    * @throws
+    */
+    private void writeObject(String path, String filename, LinkedList&lt;TestMessage&gt; msg) {
+        File file = new File(path, filename);
+        if (false == file.isFile()) {
+            return ;
+        }
+
+        try {
+            // The value "false" for FileOutputStream means that overwrite this file,
+            // if it is "true",append the new data to this file.
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file,false));
+            oos.writeObject(msg);
+            oos.flush();
+            oos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+    * @Title: readObject
+    * @Description: Read a object from a file.
+    * @param path the directory of the target file
+    * @param filename the name of the target file
+    * @return LinkedList&lt;TestMessage&gt;
+    * @throws
+    */
+    @SuppressWarnings("unchecked")
+    private LinkedList&lt;TestMessage&gt; readObject(String path, String filename) {
+        File file = new File(path, filename);
+        ObjectInputStream ois = null;
+        LinkedList&lt;TestMessage&gt; msgAll = null;
+
+        try {
+            ois = new ObjectInputStream(new FileInputStream(file));
+            try {
+                msgAll = (LinkedList&lt;TestMessage&gt;)ois.readObject();
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ois.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return msgAll;
+    }
+}
+</pre><h2><a name='header-n1719' class='md-header-anchor '></a>47. 后会有期</h2><blockquote><p>路漫漫其修远兮，吾将上下而求索</p><p>纸上得来终觉浅，绝知此事要躬行</p></blockquote><p>&nbsp;</p></div>
+</body>
+</html>
